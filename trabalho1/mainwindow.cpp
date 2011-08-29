@@ -43,7 +43,7 @@ void MainWindow::genRand(){
 
 void MainWindow::exibeImagem(){
    qDebug()<<" carrega imagem ";
-   QString local = "/home/pericolo/teste.png";
+   QString local = "teste.png";
    QPixmap *imagem = new QPixmap(local);
    ui->imagem->setPixmap(*imagem);
 }
