@@ -20,9 +20,7 @@ private:
     Ui::MainWindow *ui;
 
 public slots:
-    void conectar();
-    void genRand();
-    void exibeImagem();
+    void loadImage();
 
 };
 

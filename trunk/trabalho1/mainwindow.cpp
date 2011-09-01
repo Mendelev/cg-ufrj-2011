@@ -9,10 +9,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->pBtn01,SIGNAL(clicked()),this,SLOT(conectar()));
-    connect(ui->BotaoFecha,SIGNAL(triggered()),this,SLOT(close()));
-   connect(ui->actionRand,SIGNAL(triggered()),this,SLOT(genRand()));
-   connect(ui->pBtn01,SIGNAL(clicked()),this,SLOT(exibeImagem()));
+
+    connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
+
+    connect(ui->btnLoadImage,SIGNAL(clicked()),this,SLOT(loadImage()));
+
+    ui->displayPaneArea->setWidget(ui->displayPane);
 }
 
 MainWindow::~MainWindow()
@@ -32,19 +34,11 @@ void MainWindow::changeEvent(QEvent *e)
     }
 
 }
-void MainWindow::conectar(){
-    ui->label->setText("foi");
-}
 
-void MainWindow::genRand(){
-    srand(time(NULL));
-    qDebug() << "Sorteio: " << rand();
-}
+void MainWindow::loadImage(){
 
-void MainWindow::exibeImagem(){
-   qDebug()<<" carrega imagem ";
    QString local = "teste.png";
    QPixmap *imagem = new QPixmap(local);
-   ui->imagem->setPixmap(*imagem);
+   ui->displayPane->setPixmap(*imagem);
 }
 
