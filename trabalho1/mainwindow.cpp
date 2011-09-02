@@ -2,7 +2,10 @@
 #include "ui_mainwindow.h"
 #include <QDebug>
 #include "math.h"
+#include <QImage>
 #include <QPixmap>
+#include <QDebug>
+#include <QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -36,9 +39,12 @@ void MainWindow::changeEvent(QEvent *e)
 }
 
 void MainWindow::loadImage(){
+   QString fileName = QFileDialog::getOpenFileName(this,tr("Open Fire"),"",tr("Files (*.*)"));
 
-   QString local = "teste.png";
-   QPixmap *imagem = new QPixmap(local);
-   ui->displayPane->setPixmap(*imagem);
+   QPixmap *mainImage = new QPixmap(fileName);
+
+   qDebug() << "Loaded Image Size(W,H): (" << mainImage->width() << "," << mainImage->height()<< ")"<<endl;
+   //imageMatrix = QByteArray()
+   ui->displayPane->setPixmap(*mainImage);
 }
 
