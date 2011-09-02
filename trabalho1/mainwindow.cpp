@@ -9,12 +9,10 @@
 #include <QDebug>
 #include <QFileDialog>
 #include <QRgb>
-
-using namespace std;
+#include <string>
 
 MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent),  ui(new Ui::MainWindow)
 {
-    ImageResizer imgResizer;
     ui->setupUi(this);
 
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
@@ -45,7 +43,7 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::scaleImage(){
 
-    this->imgResizer = ImageResizer(this->mainImage->toImage(),ui->txtWidth,ui->txtHeight);
+    this->imgResizer = ImageResizer(this->mainImage->toImage(),ui->txtWidth->text().toInt(),ui->txtHeight->text().toInt());
 
 
 }
@@ -55,20 +53,20 @@ void MainWindow::loadImage(){
 
    this->fileName = QFileDialog::getOpenFileName(this,tr("Open Fire"),"",tr("Files (*.*)"));
 
-   this->*mainImage = new QPixmap(fileName);
+   this->mainImage = new QPixmap(fileName);
 
-   ui->txtWidth = mainImage->width();
-   ui->txtHeight = mainImage->height();
+   ui->txtWidth->setText(QString(mainImage->width()));
+   ui->txtHeight->setText(QString(mainImage->height()));
 
-   QRgb imageMatrix[imgHeight][imgWidth];
+   //QRgb imageMatrix[imgHeight][imgWidth];
 
 
-   for(int i = 0; i < imgHeight; i++){
-       for(int j = 0; j < imgWidth; j++){
-           imageMatrix[i][j] = imageModel.pixel(i,j);
-           qDebug() << "Pixel [" << i << ","<< j <<"] = " << imageModel.pixel(i,j) << endl;
-       }
-   }
+//   for(int i = 0; i < imgHeight; i++){
+//       for(int j = 0; j < imgWidth; j++){
+//           imageMatrix[i][j] = imageModel.pixel(i,j);
+//           qDebug() << "Pixel [" << i << ","<< j <<"] = " << imageModel.pixel(i,j) << endl;
+//       }
+//   }
 
 
    //qDebug() << "Loaded Image Size(W,H): (" << mainImage->width() << "," << mainImage->height()<< ")"<<endl;
