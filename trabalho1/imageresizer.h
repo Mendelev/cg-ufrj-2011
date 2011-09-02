@@ -4,7 +4,7 @@
 class ImageResizer
 {
 public:
-    ImageResizer(QImage imagem,int newWidth,int newHeight);
+   // ImageResizer(QImage imagem,int newWidth,int newHeight);
 
 
 

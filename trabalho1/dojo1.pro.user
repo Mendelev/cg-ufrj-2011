@@ -80,7 +80,7 @@
     <value type="QString">CONFIG_PROTECT=/var/spool/torque /var/lib/hsqldb /usr/share/config</value>
     <value type="QString">CONFIG_PROTECT_MASK=/etc/sandbox.d /etc/env.d/java/ /etc/fonts/fonts.conf /etc/gconf /etc/terminfo /etc/eselect/postgresql /etc/ca-certificates.conf /etc/texmf/web2c /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d /etc/revdep-rebuild</value>
     <value type="QString">CVS_RSH=ssh</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-wSgVwj8yTj,guid=cb04662ee1309c68355d15f8000000e6</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-M5f68fWQKh,guid=dc1788aa73fc2c0860efca3600000044</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">DRQUEUE_LOGS=/var/log/drqueue</value>
@@ -93,11 +93,13 @@
     <value type="QString">GDMSESSION=gnome</value>
     <value type="QString">GDM_LANG=C</value>
     <value type="QString">GDM_XSERVER_LOCATION=local</value>
+    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/qtcreator-qt-creator.desktop</value>
+    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE_PID=14178</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-fU9hds</value>
-    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/samoraes/.gtkrc-1.2-gnome2</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-49WwwM</value>
+    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/pericolo/.gtkrc-1.2-gnome2</value>
     <value type="QString">HG=/usr/bin/hg</value>
-    <value type="QString">HOME=/home/samoraes</value>
+    <value type="QString">HOME=/home/pericolo</value>
     <value type="QString">INFOPATH=/usr/share/info:/usr/share/binutils-data/i686-pc-linux-gnu/2.20.1/info:/usr/share/gcc-data/i486-pc-linux-gnu/4.1.2/info:/usr/share/gcc-data/i686-pc-linux-gnu/4.4.4/info:/usr/share/info/emacs-23</value>
     <value type="QString">JAVAC=/etc/java-config-2/current-system-vm/bin/javac</value>
     <value type="QString">JAVACC_HOME=/usr/share/javacc/</value>
@@ -107,38 +109,38 @@
     <value type="QString">LC_CTYPE=pt_BR.UTF-8</value>
     <value type="QString">LESS=-R -M --shift 5</value>
     <value type="QString">LESSOPEN=|lesspipe.sh %s</value>
-    <value type="QString">LOGNAME=samoraes</value>
+    <value type="QString">LOGNAME=pericolo</value>
     <value type="QString">MANPATH=/etc/java-config-2/current-system-vm/man:/usr/local/share/man:/usr/share/man:/usr/share/binutils-data/i686-pc-linux-gnu/2.20.1/man:/usr/share/gcc-data/i486-pc-linux-gnu/4.1.2/man:/usr/share/gcc-data/i686-pc-linux-gnu/4.4.4/man:/etc/java-config/system-vm/man/:/usr/share/postgresql-8.4/man:/usr/share/postgresql-9.0/man:/opt/cuda/man</value>
     <value type="QString">OPENGL_PROFILE=xorg-x11</value>
-    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-samoraes</value>
+    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-pericolo</value>
     <value type="QString">PAGER=/usr/bin/less</value>
     <value type="QString">PATH=/usr/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/i686-pc-linux-gnu/avr/gcc-bin/4.5.2:/usr/i486-pc-linux-gnu/gcc-bin/4.1.2:/usr/i686-pc-linux-gnu/gcc-bin/4.4.4:/opt/cuda/bin</value>
     <value type="QString">PBS_SERVER_HOME=/var/spool/torque</value>
     <value type="QString">PRELINK_PATH_MASK=/usr/lib/libfreebl3.so:/usr/lib/libnssdbm3.so:/usr/lib/libsoftokn3.so</value>
     <value type="QString">PVM_ARCH=LINUX</value>
     <value type="QString">PVM_ROOT=/usr/share/pvm3</value>
-    <value type="QString">PWD=/home/samoraes</value>
+    <value type="QString">PWD=/home/pericolo</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
     <value type="QString">RUBYOPT=-rauto_gem</value>
     <value type="QString">SBCL_HOME=/usr/lib/sbcl</value>
     <value type="QString">SBCL_SOURCE_ROOT=/usr/lib/sbcl/src</value>
-    <value type="QString">SESSION_MANAGER=local/imagem.dcc.ufrj.br:@/tmp/.ICE-unix/13521,unix/imagem.dcc.ufrj.br:/tmp/.ICE-unix/13521</value>
+    <value type="QString">SESSION_MANAGER=local/leblon13.dcc.ufrj.br:@/tmp/.ICE-unix/13522,unix/leblon13.dcc.ufrj.br:/tmp/.ICE-unix/13522</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SHLVL=0</value>
     <value type="QString">SSH_AGENT_PID=13550</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-fU9hds/ssh</value>
-    <value type="QString">USER=samoraes</value>
-    <value type="QString">USERNAME=samoraes</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-49WwwM/ssh</value>
+    <value type="QString">USER=pericolo</value>
+    <value type="QString">USERNAME=pericolo</value>
     <value type="QString">VBOX_APP_HOME=/opt/VirtualBox</value>
     <value type="QString">WINDOWPATH=7</value>
-    <value type="QString">XAUTHORITY=/tmp/.gdmT8EW0V</value>
+    <value type="QString">XAUTHORITY=/tmp/.gdmREXO1V</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg</value>
     <value type="QString">XDG_DATA_DIRS=/usr/local/share:/usr/share:/usr/share/gdm</value>
     <value type="QString">XDG_MENU_PREFIX=gnome-</value>
-    <value type="QString">XDG_SESSION_COOKIE=52945847fe0384b70c3e2f364a437f8c-1314903290.427768-1355534366</value>
+    <value type="QString">XDG_SESSION_COOKIE=52945847fe0384b70c3e2f364a437f8c-1314984076.852984-486676434</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
-    <value type="QString">/home/samoraes/CompGraf/cg-ufrj-2011/trabalho1/dojo1.pro</value>
+    <value type="QString">/home/pericolo/Documentos/UFRJ/CG2011.2/trabalhos/trabalho1/trabalho1/dojo1.pro</value>
     <value type="QString">-spec</value>
     <value type="QString">linux-g++</value>
     <value type="QString">-r</value>
@@ -146,7 +148,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString">/usr/bin/qmake</value>
    <value key="abstractProcess.enabled" type="bool">false</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/samoraes/CompGraf/cg-ufrj-2011/trabalho1</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/pericolo/Documentos/UFRJ/CG2011.2/trabalhos/trabalho1/trabalho1</value>
   </valuemap>
  </data>
  <data>
@@ -158,7 +160,7 @@
     <value type="QString">CONFIG_PROTECT=/var/spool/torque /var/lib/hsqldb /usr/share/config</value>
     <value type="QString">CONFIG_PROTECT_MASK=/etc/sandbox.d /etc/env.d/java/ /etc/fonts/fonts.conf /etc/gconf /etc/terminfo /etc/eselect/postgresql /etc/ca-certificates.conf /etc/texmf/web2c /etc/texmf/language.dat.d /etc/texmf/language.def.d /etc/texmf/updmap.d /etc/revdep-rebuild</value>
     <value type="QString">CVS_RSH=ssh</value>
-    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-wSgVwj8yTj,guid=cb04662ee1309c68355d15f8000000e6</value>
+    <value type="QString">DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-M5f68fWQKh,guid=dc1788aa73fc2c0860efca3600000044</value>
     <value type="QString">DESKTOP_SESSION=gnome</value>
     <value type="QString">DISPLAY=:0.0</value>
     <value type="QString">DRQUEUE_LOGS=/var/log/drqueue</value>
@@ -171,11 +173,13 @@
     <value type="QString">GDMSESSION=gnome</value>
     <value type="QString">GDM_LANG=C</value>
     <value type="QString">GDM_XSERVER_LOCATION=local</value>
+    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/qtcreator-qt-creator.desktop</value>
+    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE_PID=14178</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
-    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-fU9hds</value>
-    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/samoraes/.gtkrc-1.2-gnome2</value>
+    <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-49WwwM</value>
+    <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/pericolo/.gtkrc-1.2-gnome2</value>
     <value type="QString">HG=/usr/bin/hg</value>
-    <value type="QString">HOME=/home/samoraes</value>
+    <value type="QString">HOME=/home/pericolo</value>
     <value type="QString">INFOPATH=/usr/share/info:/usr/share/binutils-data/i686-pc-linux-gnu/2.20.1/info:/usr/share/gcc-data/i486-pc-linux-gnu/4.1.2/info:/usr/share/gcc-data/i686-pc-linux-gnu/4.4.4/info:/usr/share/info/emacs-23</value>
     <value type="QString">JAVAC=/etc/java-config-2/current-system-vm/bin/javac</value>
     <value type="QString">JAVACC_HOME=/usr/share/javacc/</value>
@@ -185,35 +189,35 @@
     <value type="QString">LC_CTYPE=pt_BR.UTF-8</value>
     <value type="QString">LESS=-R -M --shift 5</value>
     <value type="QString">LESSOPEN=|lesspipe.sh %s</value>
-    <value type="QString">LOGNAME=samoraes</value>
+    <value type="QString">LOGNAME=pericolo</value>
     <value type="QString">MANPATH=/etc/java-config-2/current-system-vm/man:/usr/local/share/man:/usr/share/man:/usr/share/binutils-data/i686-pc-linux-gnu/2.20.1/man:/usr/share/gcc-data/i486-pc-linux-gnu/4.1.2/man:/usr/share/gcc-data/i686-pc-linux-gnu/4.4.4/man:/etc/java-config/system-vm/man/:/usr/share/postgresql-8.4/man:/usr/share/postgresql-9.0/man:/opt/cuda/man</value>
     <value type="QString">OPENGL_PROFILE=xorg-x11</value>
-    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-samoraes</value>
+    <value type="QString">ORBIT_SOCKETDIR=/tmp/orbit-pericolo</value>
     <value type="QString">PAGER=/usr/bin/less</value>
     <value type="QString">PATH=/usr/bin:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/i686-pc-linux-gnu/avr/gcc-bin/4.5.2:/usr/i486-pc-linux-gnu/gcc-bin/4.1.2:/usr/i686-pc-linux-gnu/gcc-bin/4.4.4:/opt/cuda/bin</value>
     <value type="QString">PBS_SERVER_HOME=/var/spool/torque</value>
     <value type="QString">PRELINK_PATH_MASK=/usr/lib/libfreebl3.so:/usr/lib/libnssdbm3.so:/usr/lib/libsoftokn3.so</value>
     <value type="QString">PVM_ARCH=LINUX</value>
     <value type="QString">PVM_ROOT=/usr/share/pvm3</value>
-    <value type="QString">PWD=/home/samoraes</value>
+    <value type="QString">PWD=/home/pericolo</value>
     <value type="QString">QTDIR=/usr/share/qt4</value>
     <value type="QString">RUBYOPT=-rauto_gem</value>
     <value type="QString">SBCL_HOME=/usr/lib/sbcl</value>
     <value type="QString">SBCL_SOURCE_ROOT=/usr/lib/sbcl/src</value>
-    <value type="QString">SESSION_MANAGER=local/imagem.dcc.ufrj.br:@/tmp/.ICE-unix/13521,unix/imagem.dcc.ufrj.br:/tmp/.ICE-unix/13521</value>
+    <value type="QString">SESSION_MANAGER=local/leblon13.dcc.ufrj.br:@/tmp/.ICE-unix/13522,unix/leblon13.dcc.ufrj.br:/tmp/.ICE-unix/13522</value>
     <value type="QString">SHELL=/bin/bash</value>
     <value type="QString">SHLVL=0</value>
     <value type="QString">SSH_AGENT_PID=13550</value>
-    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-fU9hds/ssh</value>
-    <value type="QString">USER=samoraes</value>
-    <value type="QString">USERNAME=samoraes</value>
+    <value type="QString">SSH_AUTH_SOCK=/tmp/keyring-49WwwM/ssh</value>
+    <value type="QString">USER=pericolo</value>
+    <value type="QString">USERNAME=pericolo</value>
     <value type="QString">VBOX_APP_HOME=/opt/VirtualBox</value>
     <value type="QString">WINDOWPATH=7</value>
-    <value type="QString">XAUTHORITY=/tmp/.gdmT8EW0V</value>
+    <value type="QString">XAUTHORITY=/tmp/.gdmREXO1V</value>
     <value type="QString">XDG_CONFIG_DIRS=/etc/xdg</value>
     <value type="QString">XDG_DATA_DIRS=/usr/local/share:/usr/share:/usr/share/gdm</value>
     <value type="QString">XDG_MENU_PREFIX=gnome-</value>
-    <value type="QString">XDG_SESSION_COOKIE=52945847fe0384b70c3e2f364a437f8c-1314903290.427768-1355534366</value>
+    <value type="QString">XDG_SESSION_COOKIE=52945847fe0384b70c3e2f364a437f8c-1314984076.852984-486676434</value>
    </valuelist>
    <value key="abstractProcess.IgnoreReturnValue" type="bool">false</value>
    <valuelist key="abstractProcess.arguments" type="QVariantList">
@@ -221,7 +225,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString">/usr/bin/make</value>
    <value key="abstractProcess.enabled" type="bool">true</value>
-   <value key="abstractProcess.workingDirectory" type="QString">/home/samoraes/CompGraf/cg-ufrj-2011/trabalho1</value>
+   <value key="abstractProcess.workingDirectory" type="QString">/home/pericolo/Documentos/UFRJ/CG2011.2/trabalhos/trabalho1/trabalho1</value>
   </valuemap>
  </data>
  <data>
