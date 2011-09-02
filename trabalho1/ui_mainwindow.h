@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Fri Sep 2 14:37:42 2011
+** Created: Fri Sep 2 16:22:32 2011
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -17,6 +17,7 @@
 #include <QtGui/QGridLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
+#include <QtGui/QLineEdit>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenu>
 #include <QtGui/QMenuBar>
@@ -41,6 +42,11 @@ public:
     QWidget *scrollAreaWidgetContents;
     QWidget *gridLayoutWidget;
     QGridLayout *displayPaneLayout;
+    QLineEdit *txtWidth;
+    QLineEdit *txtHeight;
+    QPushButton *btnScaleImage;
+    QLabel *lblWidth;
+    QLabel *lblHeight;
     QMenuBar *menuBar;
     QMenu *menuMenu;
     QToolBar *mainToolBar;
@@ -81,10 +87,25 @@ public:
         displayPaneLayout->setObjectName(QString::fromUtf8("displayPaneLayout"));
         displayPaneLayout->setContentsMargins(0, 0, 0, 0);
         displayPaneArea->setWidget(scrollAreaWidgetContents);
+        txtWidth = new QLineEdit(centralWidget);
+        txtWidth->setObjectName(QString::fromUtf8("txtWidth"));
+        txtWidth->setGeometry(QRect(20, 300, 113, 27));
+        txtHeight = new QLineEdit(centralWidget);
+        txtHeight->setObjectName(QString::fromUtf8("txtHeight"));
+        txtHeight->setGeometry(QRect(170, 300, 113, 27));
+        btnScaleImage = new QPushButton(centralWidget);
+        btnScaleImage->setObjectName(QString::fromUtf8("btnScaleImage"));
+        btnScaleImage->setGeometry(QRect(310, 300, 92, 27));
+        lblWidth = new QLabel(centralWidget);
+        lblWidth->setObjectName(QString::fromUtf8("lblWidth"));
+        lblWidth->setGeometry(QRect(20, 280, 59, 17));
+        lblHeight = new QLabel(centralWidget);
+        lblHeight->setObjectName(QString::fromUtf8("lblHeight"));
+        lblHeight->setGeometry(QRect(170, 280, 59, 17));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 600, 29));
+        menuBar->setGeometry(QRect(0, 0, 600, 25));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
         MainWindow->setMenuBar(menuBar);
@@ -112,6 +133,9 @@ public:
         actionExit->setText(QApplication::translate("MainWindow", "Exit", 0, QApplication::UnicodeUTF8));
         btnLoadImage->setText(QApplication::translate("MainWindow", "Load Image...", 0, QApplication::UnicodeUTF8));
         displayPane->setText(QString());
+        btnScaleImage->setText(QApplication::translate("MainWindow", "Scale...", 0, QApplication::UnicodeUTF8));
+        lblWidth->setText(QApplication::translate("MainWindow", "Width:", 0, QApplication::UnicodeUTF8));
+        lblHeight->setText(QApplication::translate("MainWindow", "Height:", 0, QApplication::UnicodeUTF8));
         menuMenu->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
