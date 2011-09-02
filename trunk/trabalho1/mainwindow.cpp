@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "math.h"
+#include "imageresizer.h"
 
 #include <QDebug>
 #include <QImage>
@@ -11,15 +12,15 @@
 
 using namespace std;
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent),  ui(new Ui::MainWindow)
 {
+    ImageResizer imgResizer;
     ui->setupUi(this);
 
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
 
     connect(ui->btnLoadImage,SIGNAL(clicked()),this,SLOT(loadImage()));
+    connect(ui->btnScaleImage,SIGNAL(clicked()),this,SLOT(scaleImage()));
 
     ui->displayPaneArea->setWidget(ui->displayPane);
 }
@@ -42,16 +43,22 @@ void MainWindow::changeEvent(QEvent *e)
 
 }
 
+void MainWindow::scaleImage(){
+
+    this->imgResizer = ImageResizer(this->mainImage->toImage(),ui->txtWidth,ui->txtHeight);
+
+
+}
+
 void MainWindow::loadImage(){
 
-   QImage imageModel;
-   QString fileName = QFileDialog::getOpenFileName(this,tr("Open Fire"),"",tr("Files (*.*)"));
 
-   QPixmap *mainImage = new QPixmap(fileName);
-   imageModel = mainImage->toImage();
+   this->fileName = QFileDialog::getOpenFileName(this,tr("Open Fire"),"",tr("Files (*.*)"));
 
-   int imgWidth = mainImage->width();
-   int imgHeight= mainImage->height();
+   this->*mainImage = new QPixmap(fileName);
+
+   ui->txtWidth = mainImage->width();
+   ui->txtHeight = mainImage->height();
 
    QRgb imageMatrix[imgHeight][imgWidth];
 

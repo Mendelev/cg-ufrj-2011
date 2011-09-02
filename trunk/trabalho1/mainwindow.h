@@ -10,6 +10,9 @@ namespace Ui {
 class MainWindow : public QMainWindow {
     Q_OBJECT
 public:
+    QPixmap *mainImage;
+    QString fileName;
+
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
@@ -21,6 +24,7 @@ private:
 
 public slots:
     void loadImage();
+    void scaleImage();
 
 };
 
