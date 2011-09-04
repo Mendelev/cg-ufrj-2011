@@ -1,4 +1,6 @@
 #include "imageresizer.h"
+#include <QDebug>
+
 using namespace std;
 ImageResizer::ImageResizer(QImage image, int newWidth, int newHeight)
 {
@@ -14,8 +16,8 @@ ImageResizer::ImageResizer(QImage image, int newWidth, int newHeight)
 void ImageResizer::transform(){
 
     uchar * vetor = oldImage.bits();
-    //cout<< vetor;
-
+    //qDebug()<< vetor[3];
+    qDebug()<<"ate aqui ruahuhau";
 
 
 
