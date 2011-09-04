@@ -5,7 +5,11 @@ TARGET = dojo1
 TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
-    imageresizer.cpp
+    imageresizer.cpp \
+    cor.cpp
 HEADERS += mainwindow.h \
-    imageresizer.h
+    imageresizer.h \
+    cor.h
 FORMS += mainwindow.ui
+
+

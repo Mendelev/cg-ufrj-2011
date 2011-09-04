@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <iostream>
 #include <imageresizer.h>
+
 namespace Ui {
     class MainWindow;
 }
