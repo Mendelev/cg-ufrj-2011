@@ -72,36 +72,21 @@
       </property>
       <layout class="QGridLayout" name="displayPaneLayout"/>
      </widget>
+     <zorder>gridLayoutWidget</zorder>
+     <zorder>txtHeight</zorder>
     </widget>
-   </widget>
-   <widget class="QLineEdit" name="txtWidth">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>300</y>
-      <width>113</width>
-      <height>27</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txtHeight">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>300</y>
-      <width>113</width>
-      <height>27</height>
-     </rect>
-    </property>
    </widget>
    <widget class="QPushButton" name="btnScaleImage">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>300</y>
-      <width>92</width>
+      <x>470</x>
+      <y>180</y>
+      <width>81</width>
       <height>27</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>Scale the loaded image according to the values in the &quot;Width&quot; and &quot;Height&quot; fields.</string>
     </property>
     <property name="text">
      <string>Scale...</string>
@@ -110,8 +95,8 @@
    <widget class="QLabel" name="lblWidth">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>280</y>
+      <x>470</x>
+      <y>50</y>
       <width>59</width>
       <height>17</height>
      </rect>
@@ -123,14 +108,34 @@
    <widget class="QLabel" name="lblHeight">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>280</y>
+      <x>470</x>
+      <y>110</y>
       <width>59</width>
       <height>17</height>
      </rect>
     </property>
     <property name="text">
      <string>Height:</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="txtWidth">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>70</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="txtHeight">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>130</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -140,7 +145,7 @@
      <x>0</x>
      <y>0</y>
      <width>600</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
@@ -150,7 +155,14 @@
     <addaction name="actionExit"/>
     <addaction name="separator"/>
    </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionScale"/>
+   </widget>
    <addaction name="menuMenu"/>
+   <addaction name="menuEdit"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -161,19 +173,14 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="BotaoFecha">
-   <property name="text">
-    <string>fechar</string>
-   </property>
-  </action>
-  <action name="actionRand">
-   <property name="text">
-    <string>Rand</string>
-   </property>
-  </action>
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionScale">
+   <property name="text">
+    <string>Scale Image...</string>
    </property>
   </action>
  </widget>

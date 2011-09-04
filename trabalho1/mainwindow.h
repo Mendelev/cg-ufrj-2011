@@ -28,6 +28,7 @@ private:
 public slots:
     void loadImage();
     void scaleImage();
+    void startScaleMode();
 
 };
 

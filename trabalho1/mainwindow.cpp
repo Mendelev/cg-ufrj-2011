@@ -16,11 +16,19 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent),  ui(new Ui::Main
     ui->setupUi(this);
 
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
-
+    connect(ui->actionScale, SIGNAL(triggered()),this,SLOT(startScaleMode()));
     connect(ui->btnLoadImage,SIGNAL(clicked()),this,SLOT(loadImage()));
     connect(ui->btnScaleImage,SIGNAL(clicked()),this,SLOT(scaleImage()));
 
+
     ui->displayPaneArea->setWidget(ui->displayPane);
+
+    //Hide all the Scale Specific QWidgets
+    ui->btnScaleImage->hide();
+    ui->txtHeight->hide();
+    ui->txtWidth->hide();
+    ui->lblHeight->hide();
+    ui->lblWidth->hide();
 }
 
 MainWindow::~MainWindow()
@@ -41,39 +49,41 @@ void MainWindow::changeEvent(QEvent *e)
 
 }
 
+void MainWindow::startScaleMode(){
+
+    //Show all the Scale Specific QWidgets
+    ui->lblHeight->show();
+    ui->lblWidth->show();
+    ui->txtHeight->show();
+    ui->txtWidth->show();
+    ui->btnScaleImage->show();
+}
+
 void MainWindow::scaleImage(){
 
     this->imgResizer = ImageResizer(this->mainImage->toImage(),ui->txtWidth->text().toInt(),ui->txtHeight->text().toInt());
     this->imgResizer.transform();
-
-
 }
 
 void MainWindow::loadImage(){
 
+    int imgHeight;
+    int imgWidth;
+    QImage imageModel;
 
-   this->fileName = QFileDialog::getOpenFileName(this,tr("Open Fire"),"",tr("Files (*.*)"));
+    this->fileName = QFileDialog::getOpenFileName(this,tr("Open Fire"),"",tr("Files (*.*)"));
 
-   this->mainImage = new QPixmap(fileName);
+    this->mainImage = new QPixmap(fileName);
 
-   ui->txtWidth->setText(QString(mainImage->width()));
-   ui->txtHeight->setText(QString(mainImage->height()));
+    imageModel = this->mainImage->toImage();
+    imgHeight = this->mainImage->height();
+    imgWidth = this->mainImage->width();
 
-   //QRgb imageMatrix[imgHeight][imgWidth];
+    ui->txtHeight->setText(QString::number(imgHeight));
+    ui->txtWidth->setText(QString::number(imgWidth));
 
-
-//   for(int i = 0; i < imgHeight; i++){
-//       for(int j = 0; j < imgWidth; j++){
-//           imageMatrix[i][j] = imageModel.pixel(i,j);
-//           qDebug() << "Pixel [" << i << ","<< j <<"] = " << imageModel.pixel(i,j) << endl;
-//       }
-//   }
-
-
-   //qDebug() << "Loaded Image Size(W,H): (" << mainImage->width() << "," << mainImage->height()<< ")"<<endl;
-   //qDebug() << "Loaded Image Size(W,H): (" << imgWidth << "," << imgHeight << ")"<<endl;
-
-   //ui->displayPane->setPixmap(*mainImage);
    ui->displayPane->setPixmap(*mainImage);
+
+
 }
 
