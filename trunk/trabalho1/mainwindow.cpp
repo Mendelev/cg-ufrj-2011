@@ -44,6 +44,7 @@ void MainWindow::changeEvent(QEvent *e)
 void MainWindow::scaleImage(){
 
     this->imgResizer = ImageResizer(this->mainImage->toImage(),ui->txtWidth->text().toInt(),ui->txtHeight->text().toInt());
+    this->imgResizer.transform();
 
 
 }
