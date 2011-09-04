@@ -9,6 +9,8 @@
 #include <QDebug>
 #include <QFileDialog>
 #include <QRgb>
+#include <QPoint>
+#include <QMouseEvent>
 #include <string>
 
 MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent),  ui(new Ui::MainWindow)
@@ -16,10 +18,9 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent),  ui(new Ui::Main
     ui->setupUi(this);
 
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(close()));
-
     connect(ui->btnLoadImage,SIGNAL(clicked()),this,SLOT(loadImage()));
     connect(ui->btnScaleImage,SIGNAL(clicked()),this,SLOT(scaleImage()));
-
+    connect(ui->btnCropImage,SIGNAL(clicked()),this,SLOT(cropImage()));
     ui->displayPaneArea->setWidget(ui->displayPane);
 }
 
@@ -41,12 +42,29 @@ void MainWindow::changeEvent(QEvent *e)
 
 }
 
+void MainWindow::mousePressEvent(QMouseEvent *e){
+    if(e->button() == Qt::LeftButton){
+        this->startCrop = e->pos();
+    }
+}
+
+void MainWindow::mouseReleaseEvent(QMouseEvent *e){
+    if(e->button() == Qt::LeftButton){
+        this->endCrop = e->pos();
+    }
+}
+
+
 void MainWindow::scaleImage(){
 
-    this->imgResizer = ImageResizer(this->mainImage->toImage(),ui->txtWidth->text().toInt(),ui->txtHeight->text().toInt());
+    this->imgResizer = ImageResizer(this->mainImage->toImage(),ui->txtWidth->toPlainText().toInt(),ui->txtHeight->toPlainText().toInt());
     this->imgResizer.transform();
 
 
+}
+
+void MainWindow::cropImage(){
+    this->imgCropper = ImageCropper(this->mainImage->toImage(),this->startCrop,this->endCrop);
 }
 
 void MainWindow::loadImage(){
@@ -56,24 +74,14 @@ void MainWindow::loadImage(){
 
    this->mainImage = new QPixmap(fileName);
 
-   ui->txtWidth->setText(QString(mainImage->width()));
-   ui->txtHeight->setText(QString(mainImage->height()));
-
-   //QRgb imageMatrix[imgHeight][imgWidth];
+    ui->txtWidth->setPlainText(QString::number(mainImage->width()));
+    ui->txtHeight->setPlainText(QString::number(mainImage->height()));
 
 
-//   for(int i = 0; i < imgHeight; i++){
-//       for(int j = 0; j < imgWidth; j++){
-//           imageMatrix[i][j] = imageModel.pixel(i,j);
-//           qDebug() << "Pixel [" << i << ","<< j <<"] = " << imageModel.pixel(i,j) << endl;
-//       }
-//   }
 
 
-   //qDebug() << "Loaded Image Size(W,H): (" << mainImage->width() << "," << mainImage->height()<< ")"<<endl;
-   //qDebug() << "Loaded Image Size(W,H): (" << imgWidth << "," << imgHeight << ")"<<endl;
 
-   //ui->displayPane->setPixmap(*mainImage);
+
    ui->displayPane->setPixmap(*mainImage);
 }
 
