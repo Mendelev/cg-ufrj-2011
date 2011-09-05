@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Mon Sep 5 10:18:12 2011
+** Created: Mon Sep 5 10:45:29 2011
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -37,6 +37,7 @@ public:
     QAction *actionExit;
     QAction *actionScale;
     QAction *actionCrop;
+    QAction *actionGScale;
     QWidget *centralWidget;
     QPushButton *btnLoadImage;
     QLabel *displayPane;
@@ -77,6 +78,8 @@ public:
         actionScale->setObjectName(QString::fromUtf8("actionScale"));
         actionCrop = new QAction(MainWindow);
         actionCrop->setObjectName(QString::fromUtf8("actionCrop"));
+        actionGScale = new QAction(MainWindow);
+        actionGScale->setObjectName(QString::fromUtf8("actionGScale"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         btnLoadImage = new QPushButton(centralWidget);
@@ -161,6 +164,8 @@ public:
         menuEdit->addAction(actionScale);
         menuEdit->addSeparator();
         menuEdit->addAction(actionCrop);
+        menuEdit->addSeparator();
+        menuEdit->addAction(actionGScale);
 
         retranslateUi(MainWindow);
 
@@ -175,6 +180,7 @@ public:
         actionExit->setText(QApplication::translate("MainWindow", "Exit", 0, QApplication::UnicodeUTF8));
         actionScale->setText(QApplication::translate("MainWindow", "Scale...", 0, QApplication::UnicodeUTF8));
         actionCrop->setText(QApplication::translate("MainWindow", "Crop...", 0, QApplication::UnicodeUTF8));
+        actionGScale->setText(QApplication::translate("MainWindow", "Gray Scale...", 0, QApplication::UnicodeUTF8));
         btnLoadImage->setText(QApplication::translate("MainWindow", "Load Image...", 0, QApplication::UnicodeUTF8));
         displayPane->setText(QString());
         btnScaleImage->setText(QApplication::translate("MainWindow", "Scale...", 0, QApplication::UnicodeUTF8));

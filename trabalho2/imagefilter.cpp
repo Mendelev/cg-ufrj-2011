@@ -90,8 +90,8 @@ void ImageFilter::transform(){
         }
     }
     this->newImage = QImage(newData, newWidth,newHeight,QImage::Format_RGB32);
-    this->newImage.save("resultadoResize.png");
-    qDebug() << "Resized image saved as: resultadoResize.png"<< endl;
+    this->newImage.save("resultadoGrayScale.png");
+    qDebug() << "Resized image saved as: resultadoGrayScale.png"<< endl;
 
 
     //qDebug()<< vetor[3];

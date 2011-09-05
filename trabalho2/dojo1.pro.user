@@ -94,7 +94,7 @@
     <value type="QString">GDM_LANG=C</value>
     <value type="QString">GDM_XSERVER_LOCATION=local</value>
     <value type="QString">GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/qtcreator-qt-creator.desktop</value>
-    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE_PID=14207</value>
+    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE_PID=14309</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
     <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-mdUKHb</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/pericolo/.gtkrc-1.2-gnome2</value>
@@ -106,6 +106,7 @@
     <value type="QString">JAVA_HOME=/etc/java-config-2/current-system-vm</value>
     <value type="QString">JDK_HOME=/etc/java-config-2/current-system-vm</value>
     <value type="QString">LANG=C</value>
+    <value type="QString">LANGUAGE=</value>
     <value type="QString">LC_CTYPE=pt_BR.UTF-8</value>
     <value type="QString">LESS=-R -M --shift 5</value>
     <value type="QString">LESSOPEN=|lesspipe.sh %s</value>
@@ -174,7 +175,7 @@
     <value type="QString">GDM_LANG=C</value>
     <value type="QString">GDM_XSERVER_LOCATION=local</value>
     <value type="QString">GIO_LAUNCHED_DESKTOP_FILE=/usr/share/applications/qtcreator-qt-creator.desktop</value>
-    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE_PID=14207</value>
+    <value type="QString">GIO_LAUNCHED_DESKTOP_FILE_PID=14309</value>
     <value type="QString">GNOME_DESKTOP_SESSION_ID=this-is-deprecated</value>
     <value type="QString">GNOME_KEYRING_CONTROL=/tmp/keyring-mdUKHb</value>
     <value type="QString">GTK_RC_FILES=/etc/gtk/gtkrc:/home/pericolo/.gtkrc-1.2-gnome2</value>
@@ -186,6 +187,7 @@
     <value type="QString">JAVA_HOME=/etc/java-config-2/current-system-vm</value>
     <value type="QString">JDK_HOME=/etc/java-config-2/current-system-vm</value>
     <value type="QString">LANG=C</value>
+    <value type="QString">LANGUAGE=</value>
     <value type="QString">LC_CTYPE=pt_BR.UTF-8</value>
     <value type="QString">LESS=-R -M --shift 5</value>
     <value type="QString">LESSOPEN=|lesspipe.sh %s</value>

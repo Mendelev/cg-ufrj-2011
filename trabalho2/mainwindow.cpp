@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent),  ui(new Ui::Main
     connect(ui->btnCropImage,SIGNAL(clicked()),this,SLOT(cropImage()));
     connect(ui->actionCrop, SIGNAL(triggered()), this, SLOT(showCrop()));
     connect(ui->actionScale, SIGNAL(triggered()),this,SLOT(showScale()));
+    connect(ui->actionGScale, SIGNAL(triggered()), this, SLOT(toGScale()));
     ui->displayPaneArea->setWidget(ui->displayPane);
 
     hideEverything();
@@ -98,6 +99,12 @@ void MainWindow::showScale(){
 
 
     ui->btnScaleImage->show();
+
+}
+
+void MainWindow::toGScale(){
+    this->imgFilter = ImageFilter(this->mainImage->toImage(),ui->txtWidth->toPlainText().toInt(),ui->txtHeight->toPlainText().toInt());
+    this->imgFilter.transform();
 
 }
 
