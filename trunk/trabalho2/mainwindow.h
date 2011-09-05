@@ -6,6 +6,7 @@
 #include <QPoint>
 #include <iostream>
 #include <imageresizer.h>
+#include <imagecropper.h>
 
 namespace Ui {
     class MainWindow;

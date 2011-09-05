@@ -5,6 +5,12 @@
 #include <iostream>
 
 using namespace std;
+
+ImageResizer::ImageResizer()
+{
+
+}
+
 ImageResizer::ImageResizer(QImage image, int newWidth, int newHeight)
 {
 
@@ -71,7 +77,9 @@ void ImageResizer::transform(){
         }
     }
     this->newImage = QImage(newData, newWidth,newHeight,QImage::Format_RGB32);
-    this->newImage.save("resultado.png");
+    this->newImage.save("resultadoResize.png");
+    qDebug() << "Resized image saved as: resultadoResize.png"<< endl;
+
 
     //qDebug()<< vetor[3];
 
@@ -79,8 +87,4 @@ void ImageResizer::transform(){
 
 //    QImage newImage = QImage();
 //    this->newImage = newImage;
-}
-ImageResizer::ImageResizer()
-{
-
 }

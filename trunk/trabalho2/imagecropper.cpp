@@ -39,10 +39,10 @@ Cor ImageCropper::funcaoDeEscolha(int x,int y){
 
 void ImageCropper::aplicaCor(Cor cor,int i,int j){
 
-    newData[acessaPosicaoNew(i-pontoInicial.x,j-pontoInicial.y)+0]=cor.R;
-    newData[acessaPosicaoNew(i-pontoInicial.x,j-pontoInicial.y)+1]=cor.G;
-    newData[acessaPosicaoNew(i-pontoInicial.x,j-pontoInicial.y)+2]=cor.B;
-    newData[acessaPosicaoNew(i-pontoInicial.x,j-pontoInicial.y)+3]=cor.A;
+    newData[acessaPosicaoNew(i-pontoInicial.x(),j-pontoInicial.y())+0]=cor.R;
+    newData[acessaPosicaoNew(i-pontoInicial.x(),j-pontoInicial.y())+1]=cor.G;
+    newData[acessaPosicaoNew(i-pontoInicial.x(),j-pontoInicial.y())+2]=cor.B;
+    newData[acessaPosicaoNew(i-pontoInicial.x(),j-pontoInicial.y())+3]=cor.A;
 
 
 }
@@ -65,15 +65,16 @@ void ImageCropper::transform(){
     //qDebug()<<this->newWidth;
 
     newData =new uchar[newWidth*newHeight*4];
-    for(int j=pontoInicial.y;j<newHeight;j++){
-        for(int i=pontoInicial.x;i<newWidth;i++){
+    for(int j=pontoInicial.y();j<newHeight;j++){
+        for(int i=pontoInicial.x();i<newWidth;i++){
             Cor cor=funcaoDeEscolha(i,j);
             aplicaCor(cor,i,j);
 
         }
     }
     this->newImage = QImage(newData, newWidth,newHeight,QImage::Format_RGB32);
-    this->newImage.save("resultado.png");
+    this->newImage.save("resultadoCrop.png");
+    qDebug() << "Cropped image saved as: resultadoCrop.png"<< endl;
 
     //qDebug()<< vetor[3];
 

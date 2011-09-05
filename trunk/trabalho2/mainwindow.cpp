@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "math.h"
 #include "imageresizer.h"
+#include "imagecropper.h"
 
 #include <QDebug>
 #include <QImage>
@@ -64,7 +65,10 @@ void MainWindow::scaleImage(){
 }
 
 void MainWindow::cropImage(){
-    this->imgCropper = ImageCropper(this->mainImage->toImage(),this->startCrop,this->endCrop);
+    int width = this->endCrop.x() - this->startCrop.x();
+    int height = this->endCrop.y() - this->startCrop.y();
+    this->imgCropper = ImageCropper(this->mainImage->toImage(), width, height,this->startCrop);
+    this->imgCropper.transform();
 }
 
 void MainWindow::loadImage(){
