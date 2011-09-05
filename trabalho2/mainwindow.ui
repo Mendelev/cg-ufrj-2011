@@ -60,8 +60,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>449</width>
-       <height>249</height>
+       <width>447</width>
+       <height>247</height>
       </rect>
      </property>
      <widget class="QWidget" name="gridLayoutWidget">
@@ -218,9 +218,9 @@
    <widget class="QLabel" name="lblAlpha">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>580</x>
       <y>40</y>
-      <width>59</width>
+      <width>41</width>
       <height>17</height>
      </rect>
     </property>
@@ -231,7 +231,7 @@
    <widget class="QPlainTextEdit" name="txtAlpha">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>580</x>
       <y>60</y>
       <width>81</width>
       <height>41</height>
@@ -258,7 +258,7 @@
      <x>0</x>
      <y>0</y>
      <width>703</width>
-     <height>25</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">

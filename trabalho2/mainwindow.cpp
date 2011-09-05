@@ -210,8 +210,8 @@ void MainWindow::loadImage(){
     ui->txtRatioA->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtRatioA->y());
     ui->txtRatioB->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + ui->txtRatioA->width() + 20 ,  ui->txtRatioB->y());
 
-    ui->txtAlpha->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() ,  ui->txtAlpha->y());
-    ui->btnGScale->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() ,  ui->btnGScale->y());
+    ui->txtAlpha->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10 ,  ui->txtAlpha->y());
+    ui->btnGScale->move(ui->displayPaneArea->x()+ui->displayPaneArea->width()  + 10 ,  ui->btnGScale->y());
 
 
    ui->displayPane->setPixmap(*mainImage);
