@@ -36,6 +36,9 @@
       <height>21</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -90,8 +93,8 @@
    <widget class="QLabel" name="lblWidth">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>50</y>
+      <x>120</x>
+      <y>260</y>
       <width>59</width>
       <height>17</height>
      </rect>
@@ -103,8 +106,8 @@
    <widget class="QLabel" name="lblHeight">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>130</y>
+      <x>20</x>
+      <y>260</y>
       <width>59</width>
       <height>17</height>
      </rect>
@@ -116,8 +119,8 @@
    <widget class="QPlainTextEdit" name="txtWidth">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>80</y>
+      <x>120</x>
+      <y>280</y>
       <width>81</width>
       <height>41</height>
      </rect>
@@ -126,8 +129,8 @@
    <widget class="QPlainTextEdit" name="txtHeight">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>150</y>
+      <x>20</x>
+      <y>280</y>
       <width>81</width>
       <height>41</height>
      </rect>
@@ -144,6 +147,29 @@
     </property>
     <property name="text">
      <string>Crop...</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="txtStartPoint">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>280</y>
+      <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblStartPoint">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>260</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start Point:</string>
     </property>
    </widget>
   </widget>
@@ -163,7 +189,16 @@
     <addaction name="actionExit"/>
     <addaction name="separator"/>
    </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionScale"/>
+    <addaction name="separator"/>
+    <addaction name="actionCrop"/>
+   </widget>
    <addaction name="menuMenu"/>
+   <addaction name="menuEdit"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -187,6 +222,16 @@
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionScale">
+   <property name="text">
+    <string>Scale...</string>
+   </property>
+  </action>
+  <action name="actionCrop">
+   <property name="text">
+    <string>Crop...</string>
    </property>
   </action>
  </widget>

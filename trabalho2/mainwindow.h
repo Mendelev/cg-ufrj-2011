@@ -32,11 +32,14 @@ protected:
 
 private:
     Ui::MainWindow *ui;
+    void hideEverything();
 
 public slots:
     void loadImage();
     void scaleImage();
     void cropImage();
+    void showScale();
+    void showCrop();
 
 };
 
