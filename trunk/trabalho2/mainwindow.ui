@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>625</width>
+    <height>421</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -82,8 +82,8 @@
    <widget class="QPushButton" name="btnScaleImage">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>280</y>
+      <x>480</x>
+      <y>340</y>
       <width>92</width>
       <height>27</height>
      </rect>
@@ -141,9 +141,9 @@
    <widget class="QPushButton" name="btnCropImage">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>280</y>
-      <width>95</width>
+      <x>480</x>
+      <y>300</y>
+      <width>91</width>
       <height>31</height>
      </rect>
     </property>
@@ -190,7 +190,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>625</width>
      <height>23</height>
     </rect>
    </property>
