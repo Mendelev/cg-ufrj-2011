@@ -24,7 +24,9 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent),  ui(new Ui::Main
     connect(ui->btnCropImage,SIGNAL(clicked()),this,SLOT(cropImage()));
     connect(ui->actionCrop, SIGNAL(triggered()), this, SLOT(showCrop()));
     connect(ui->actionScale, SIGNAL(triggered()),this,SLOT(showScale()));
-    connect(ui->actionGScale, SIGNAL(triggered()), this, SLOT(toGScale()));
+    connect(ui->actionGScale, SIGNAL(triggered()), this, SLOT(showGScale()));
+    connect(ui->btnGScale, SIGNAL(clicked()), this, SLOT(toGScale()));
+
     ui->displayPaneArea->setWidget(ui->displayPane);
 
     hideEverything();
@@ -52,6 +54,10 @@ void MainWindow::hideEverything(){
     ui->txtStartPointY->hide();
     ui->txtRatioA->hide();
     ui->txtRatioB->hide();
+
+    ui->txtAlpha->hide();
+    ui->lblAlpha->hide();
+    ui->btnGScale->hide();
 
 }
 
@@ -100,10 +106,24 @@ void MainWindow::showScale(){
 
     ui->btnScaleImage->show();
 
+    ui->txtAlpha->hide();
+    ui->lblAlpha->hide();
+
+}
+
+void MainWindow::showGScale(){
+    ui->txtAlpha->show();
+
+    ui->lblAlpha->show();
+
+    ui->btnGScale->show();
+
+    ui->txtAlpha->setPlainText(QString::number(0));
+
 }
 
 void MainWindow::toGScale(){
-    this->imgFilter = ImageFilter(this->mainImage->toImage(),ui->txtWidth->toPlainText().toInt(),ui->txtHeight->toPlainText().toInt());
+    this->imgFilter = ImageFilter(this->mainImage->toImage(),ui->txtWidth->toPlainText().toInt(),ui->txtHeight->toPlainText().toInt()/*, ui->txtAlpha->toPlainText().toInt()*/);
     this->imgFilter.transform();
 
 }
@@ -128,6 +148,9 @@ void MainWindow::showCrop(){
     ui->txtStartPointX->show();
     ui->txtStartPointY->show();
     ui->lblStartPoint->show();
+
+    ui->txtAlpha->hide();
+    ui->lblAlpha->hide();
 }
 
 void MainWindow::cropImage(){
@@ -177,6 +200,7 @@ void MainWindow::loadImage(){
     ui->lblWidth->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->lblWidth->y());
     ui->lblStartPoint->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->lblStartPoint->y());
     ui->lblRatio->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->lblRatio->y());
+    ui->lblAlpha->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->lblRatio->y());
 
     ui->txtHeight->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtHeight->y());
     ui->txtWidth->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtWidth->y());
@@ -185,6 +209,9 @@ void MainWindow::loadImage(){
 
     ui->txtRatioA->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtRatioA->y());
     ui->txtRatioB->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + ui->txtRatioA->width() + 20 ,  ui->txtRatioB->y());
+
+    ui->txtAlpha->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() ,  ui->txtAlpha->y());
+
 
    ui->displayPane->setPixmap(*mainImage);
 }

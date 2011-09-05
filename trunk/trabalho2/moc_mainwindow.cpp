@@ -1,8 +1,8 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Mon Sep 5 10:48:59 2011
-**      by: The Qt Meta Object Compiler version 62 (Qt 4.7.4)
+** Created: Mon Sep 5 10:56:34 2011
+**      by: The Qt Meta Object Compiler version 62 (Qt 4.6.3)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -11,7 +11,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'mainwindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 62
-#error "This file was generated using the moc from 4.7.4. It"
+#error "This file was generated using the moc from 4.6.3. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,10 +20,10 @@ QT_BEGIN_MOC_NAMESPACE
 static const uint qt_meta_data_MainWindow[] = {
 
  // content:
-       5,       // revision
+       4,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -37,6 +37,7 @@ static const uint qt_meta_data_MainWindow[] = {
       49,   11,   11,   11, 0x0a,
       61,   11,   11,   11, 0x0a,
       72,   11,   11,   11, 0x0a,
+      83,   11,   11,   11, 0x0a,
 
        0        // eod
 };
@@ -44,7 +45,7 @@ static const uint qt_meta_data_MainWindow[] = {
 static const char qt_meta_stringdata_MainWindow[] = {
     "MainWindow\0\0loadImage()\0scaleImage()\0"
     "cropImage()\0showScale()\0showCrop()\0"
-    "toGScale()\0"
+    "toGScale()\0showGScale()\0"
 };
 
 const QMetaObject MainWindow::staticMetaObject = {
@@ -82,9 +83,10 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 3: showScale(); break;
         case 4: showCrop(); break;
         case 5: toGScale(); break;
+        case 6: showGScale(); break;
         default: ;
         }
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }
