@@ -123,7 +123,7 @@ void MainWindow::showGScale(){
 }
 
 void MainWindow::toGScale(){
-    this->imgFilter = ImageFilter(this->mainImage->toImage(),ui->txtWidth->toPlainText().toInt(),ui->txtHeight->toPlainText().toInt()/*, ui->txtAlpha->toPlainText().toInt()*/);
+    this->imgFilter = ImageFilter(this->mainImage->toImage(),ui->txtWidth->toPlainText().toInt(),ui->txtHeight->toPlainText().toInt(), ui->txtAlpha->toPlainText().toInt());
     this->imgFilter.transform();
 
 }
@@ -211,6 +211,7 @@ void MainWindow::loadImage(){
     ui->txtRatioB->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + ui->txtRatioA->width() + 20 ,  ui->txtRatioB->y());
 
     ui->txtAlpha->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() ,  ui->txtAlpha->y());
+    ui->btnGScale->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() ,  ui->btnGScale->y());
 
 
    ui->displayPane->setPixmap(*mainImage);
