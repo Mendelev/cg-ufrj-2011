@@ -46,7 +46,9 @@ void MainWindow::hideEverything(){
 
     ui->txtHeight->hide();
     ui->txtWidth->hide();
-    ui->txtStartPoint->hide();
+    ui->txtStartPointX->hide();
+    ui->txtStartPointY->hide();
+
 }
 
 void MainWindow::changeEvent(QEvent *e)
@@ -64,9 +66,10 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::mousePressEvent(QMouseEvent *e){
     if(e->button() == Qt::LeftButton){
-        QPoint realStartCrop = QPoint(e->pos().x(),e->pos().y() - 33);
+        QPoint realStartCrop = QPoint(e->globalPos().x() - ui->displayPane->x(),e->globalPos().y() - ui->displayPane->y());
         this->startCrop = realStartCrop;
-        ui->txtStartPoint->insertPlainText("Glu, glu , IE IE!");
+        ui->txtStartPointX->insertPlainText(QString::number(realStartCrop.x()));
+        ui->txtStartPointY->insertPlainText(QString::number(realStartCrop.y()));
     }
 }
 
@@ -102,7 +105,8 @@ void MainWindow::showCrop(){
 
     ui->btnCropImage->show();
 
-    ui->txtStartPoint->show();
+    ui->txtStartPointX->show();
+    ui->txtStartPointY->show();
     ui->lblStartPoint->show();
 }
 
@@ -128,7 +132,7 @@ void MainWindow::loadImage(){
     ui->txtHeight->setPlainText(QString::number(mainImage->height()));
 
 
-
+    ui->displayPaneArea->resize(1200,650);
 
 
    ui->displayPane->setPixmap(*mainImage);

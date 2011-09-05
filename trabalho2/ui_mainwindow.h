@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Thu Aug 18 05:48:55 2011
-**      by: Qt User Interface Compiler version 4.7.3
+** Created: Mon Sep 5 09:26:21 2011
+**      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -50,8 +50,9 @@ public:
     QPlainTextEdit *txtWidth;
     QPlainTextEdit *txtHeight;
     QPushButton *btnCropImage;
-    QPlainTextEdit *txtStartPoint;
+    QPlainTextEdit *txtStartPointX;
     QLabel *lblStartPoint;
+    QPlainTextEdit *txtStartPointY;
     QMenuBar *menuBar;
     QMenu *menuMenu;
     QMenu *menuEdit;
@@ -88,7 +89,7 @@ public:
         displayPaneArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 449, 249));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 447, 247));
         gridLayoutWidget = new QWidget(scrollAreaWidgetContents);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
         gridLayoutWidget->setGeometry(QRect(0, 0, 160, 80));
@@ -98,34 +99,39 @@ public:
         displayPaneLayout->setObjectName(QString::fromUtf8("displayPaneLayout"));
         displayPaneLayout->setContentsMargins(0, 0, 0, 0);
         displayPaneArea->setWidget(scrollAreaWidgetContents);
+        gridLayoutWidget->raise();
+        displayPane->raise();
         btnScaleImage = new QPushButton(centralWidget);
         btnScaleImage->setObjectName(QString::fromUtf8("btnScaleImage"));
-        btnScaleImage->setGeometry(QRect(470, 210, 92, 27));
+        btnScaleImage->setGeometry(QRect(60, 280, 92, 27));
         lblWidth = new QLabel(centralWidget);
         lblWidth->setObjectName(QString::fromUtf8("lblWidth"));
-        lblWidth->setGeometry(QRect(120, 260, 59, 17));
+        lblWidth->setGeometry(QRect(480, 110, 59, 17));
         lblHeight = new QLabel(centralWidget);
         lblHeight->setObjectName(QString::fromUtf8("lblHeight"));
-        lblHeight->setGeometry(QRect(20, 260, 59, 17));
+        lblHeight->setGeometry(QRect(480, 40, 59, 17));
         txtWidth = new QPlainTextEdit(centralWidget);
         txtWidth->setObjectName(QString::fromUtf8("txtWidth"));
-        txtWidth->setGeometry(QRect(120, 280, 81, 41));
+        txtWidth->setGeometry(QRect(480, 130, 81, 41));
         txtHeight = new QPlainTextEdit(centralWidget);
         txtHeight->setObjectName(QString::fromUtf8("txtHeight"));
-        txtHeight->setGeometry(QRect(20, 280, 81, 41));
+        txtHeight->setGeometry(QRect(480, 60, 81, 41));
         btnCropImage = new QPushButton(centralWidget);
         btnCropImage->setObjectName(QString::fromUtf8("btnCropImage"));
-        btnCropImage->setGeometry(QRect(470, 250, 95, 31));
-        txtStartPoint = new QPlainTextEdit(centralWidget);
-        txtStartPoint->setObjectName(QString::fromUtf8("txtStartPoint"));
-        txtStartPoint->setGeometry(QRect(230, 280, 91, 41));
+        btnCropImage->setGeometry(QRect(170, 280, 95, 31));
+        txtStartPointX = new QPlainTextEdit(centralWidget);
+        txtStartPointX->setObjectName(QString::fromUtf8("txtStartPointX"));
+        txtStartPointX->setGeometry(QRect(480, 200, 91, 41));
         lblStartPoint = new QLabel(centralWidget);
         lblStartPoint->setObjectName(QString::fromUtf8("lblStartPoint"));
-        lblStartPoint->setGeometry(QRect(230, 260, 91, 17));
+        lblStartPoint->setGeometry(QRect(480, 180, 91, 17));
+        txtStartPointY = new QPlainTextEdit(centralWidget);
+        txtStartPointY->setObjectName(QString::fromUtf8("txtStartPointY"));
+        txtStartPointY->setGeometry(QRect(480, 250, 91, 41));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 600, 29));
+        menuBar->setGeometry(QRect(0, 0, 600, 23));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
         menuEdit = new QMenu(menuBar);

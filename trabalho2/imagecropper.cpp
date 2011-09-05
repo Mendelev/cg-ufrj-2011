@@ -18,20 +18,15 @@ ImageCropper::ImageCropper(QImage image, int newWidth, int newHeight,QPoint pont
     this->scaleAToBWidth =(1.0* oldWidth)/newWidth;
     this->pontoInicial = pontoInicial;
 
+   qDebug()<<newWidth<< " " << newHeight << " "<< pontoInicial.x() << pontoInicial.y() ;
+
 }
 
 Cor ImageCropper::funcaoDeEscolha(int x,int y){
     int escolhidoX,escolhidoY;
 
-//   float parteInteira;
-//   float parteFracionaria;
-
-//   parteInteira = floor(x*1.0* scaleAToBWidth);
-//   parteFracionaria =(x*1.0* scaleAToBWidth)- parteInteira;
-
-
-   escolhidoX = (int) x;
-   escolhidoY = (int) y;
+   escolhidoX =  x;
+   escolhidoY =  y;
 
    Cor a=Cor(vetor[acessaPosicao(escolhidoX,escolhidoY)],vetor[acessaPosicao(escolhidoX,escolhidoY)+1],vetor[acessaPosicao(escolhidoX,escolhidoY)+2],vetor[acessaPosicao(escolhidoX,escolhidoY)+3]);
    return a;
@@ -65,8 +60,10 @@ void ImageCropper::transform(){
     //qDebug()<<this->newWidth;
 
     newData =new uchar[newWidth*newHeight*4];
-    for(int j=pontoInicial.y();j<newHeight;j++){
-        for(int i=pontoInicial.x();i<newWidth;i++){
+    for(int j=pontoInicial.y();j<newHeight+pontoInicial.y();j++){
+       // cout <<" j "<<j <<endl;
+        for(int i=pontoInicial.x();i<newWidth+pontoInicial.x();i++){
+          //  cout<< " i "<<i <<endl;
             Cor cor=funcaoDeEscolha(i,j);
             aplicaCor(cor,i,j);
 
