@@ -11,6 +11,7 @@ private:
     uchar * vetor;
     int oldHeight, oldWidth;
     int newHeight ,newWidth;
+    double razao;
     double scaleAToBHeight, scaleAToBWidth;
     QImage newImage;
     QImage oldImage;
