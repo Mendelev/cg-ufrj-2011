@@ -128,7 +128,19 @@ void MainWindow::cropImage(){
 
     int width = this->endCrop.x() - this->startCrop.x();
     int height = this->endCrop.y() - this->startCrop.y();
-    this->imgCropper = ImageCropper(this->mainImage->toImage(), width, height,this->startCrop);
+
+    QPoint startPoint = QPoint(ui->txtStartPointX->toPlainText().toInt(), ui->txtStartPointX->toPlainText().toInt());
+
+    if(ui->txtHeight->toPlainText().toInt() != this->mainImage->height()){
+        if(ui->txtWidth->toPlainText().toInt() != this->mainImage->width()){
+            this->imgCropper = ImageCropper(this->mainImage->toImage(), ui->txtWidth->toPlainText().toInt(), ui->txtHeight->toPlainText().toInt(),startPoint);
+        }
+    }
+    else{
+        this->imgCropper = ImageCropper(this->mainImage->toImage(), width, height,this->startCrop);
+    }
+
+
     this->imgCropper.transform();
 
 }
