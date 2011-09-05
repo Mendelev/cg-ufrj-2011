@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Wed Aug 17 22:34:31 2011
+** Created: Thu Aug 18 02:29:55 2011
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -40,7 +40,7 @@ static const uint qt_meta_data_MainWindow[] = {
 
 static const char qt_meta_stringdata_MainWindow[] = {
     "MainWindow\0\0loadImage()\0scaleImage()\0"
-    "startScaleMode()\0"
+    "cropImage()\0"
 };
 
 const QMetaObject MainWindow::staticMetaObject = {
@@ -74,7 +74,7 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         switch (_id) {
         case 0: loadImage(); break;
         case 1: scaleImage(); break;
-        case 2: startScaleMode(); break;
+        case 2: cropImage(); break;
         default: ;
         }
         _id -= 3;

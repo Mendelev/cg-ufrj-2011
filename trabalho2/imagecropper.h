@@ -2,7 +2,11 @@
 #define IMAGECROPPER_H
 #include <QPoint>
 
-class imageCropper
+#include <QPoint>
+#include <QImage>
+#include <imageresizer.h>
+
+class ImageCropper
 {
 private:
     uchar * newData;
@@ -17,8 +21,8 @@ private:
 public:
    void transform();
 
-   ImageResizer(QImage image, int newWidth, int newHeight);
-   ImageResizer();
+   ImageCropper(QImage image, int newWidth, int newHeight,QPoint pontoInicial);
+   ImageCropper();
    int acessaPosicao(int x, int y);
     int acessaPosicaoNew(int x, int y);
    void aplicaCor(Cor cor,int i,int j);

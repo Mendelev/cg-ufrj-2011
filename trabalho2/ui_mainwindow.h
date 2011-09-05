@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed Aug 17 22:41:24 2011
+** Created: Thu Aug 18 02:22:55 2011
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -47,6 +47,7 @@ public:
     QLabel *lblHeight;
     QPlainTextEdit *txtWidth;
     QPlainTextEdit *txtHeight;
+    QPushButton *btnCropImage;
     QMenuBar *menuBar;
     QMenu *menuMenu;
     QToolBar *mainToolBar;
@@ -89,7 +90,7 @@ public:
         displayPaneArea->setWidget(scrollAreaWidgetContents);
         btnScaleImage = new QPushButton(centralWidget);
         btnScaleImage->setObjectName(QString::fromUtf8("btnScaleImage"));
-        btnScaleImage->setGeometry(QRect(470, 240, 92, 27));
+        btnScaleImage->setGeometry(QRect(470, 210, 92, 27));
         lblWidth = new QLabel(centralWidget);
         lblWidth->setObjectName(QString::fromUtf8("lblWidth"));
         lblWidth->setGeometry(QRect(470, 50, 59, 17));
@@ -102,6 +103,9 @@ public:
         txtHeight = new QPlainTextEdit(centralWidget);
         txtHeight->setObjectName(QString::fromUtf8("txtHeight"));
         txtHeight->setGeometry(QRect(470, 150, 81, 41));
+        btnCropImage = new QPushButton(centralWidget);
+        btnCropImage->setObjectName(QString::fromUtf8("btnCropImage"));
+        btnCropImage->setGeometry(QRect(470, 250, 95, 31));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -136,6 +140,7 @@ public:
         btnScaleImage->setText(QApplication::translate("MainWindow", "Scale...", 0, QApplication::UnicodeUTF8));
         lblWidth->setText(QApplication::translate("MainWindow", "Width:", 0, QApplication::UnicodeUTF8));
         lblHeight->setText(QApplication::translate("MainWindow", "Height:", 0, QApplication::UnicodeUTF8));
+        btnCropImage->setText(QApplication::translate("MainWindow", "Crop...", 0, QApplication::UnicodeUTF8));
         menuMenu->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
