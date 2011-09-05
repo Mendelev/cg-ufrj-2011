@@ -66,7 +66,7 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::mousePressEvent(QMouseEvent *e){
     if(e->button() == Qt::LeftButton){
-        QPoint realStartCrop = QPoint(e->globalPos().x() - ui->displayPane->x(),e->globalPos().y() - ui->displayPane->y());
+        QPoint realStartCrop = QPoint(e->pos().x() - ( ui->displayPaneArea->x()  + 2 ),e->pos().y() - ( ui->displayPaneArea->y() + 37 ));
         this->startCrop = realStartCrop;
         ui->txtStartPointX->insertPlainText(QString::number(realStartCrop.x()));
         ui->txtStartPointY->insertPlainText(QString::number(realStartCrop.y()));
@@ -134,6 +134,18 @@ void MainWindow::loadImage(){
 
     ui->displayPaneArea->resize(1200,650);
 
+    ui->btnLoadImage->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,ui->btnLoadImage->y());
+    ui->btnCropImage->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->btnCropImage->y());
+    ui->btnScaleImage->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->btnScaleImage->y());
+
+    ui->lblHeight->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->lblHeight->y());
+    ui->lblWidth->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->lblWidth->y());
+    ui->lblStartPoint->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->lblStartPoint->y());
+
+    ui->txtHeight->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtHeight->y());
+    ui->txtWidth->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtWidth->y());
+    ui->txtStartPointX->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtStartPointX->y());
+    ui->txtStartPointY->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtStartPointY->y());
 
    ui->displayPane->setPixmap(*mainImage);
 }
