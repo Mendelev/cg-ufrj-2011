@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Mon Sep 5 09:38:29 2011
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Mon Sep 5 10:18:12 2011
+**      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -53,6 +53,9 @@ public:
     QPlainTextEdit *txtStartPointX;
     QLabel *lblStartPoint;
     QPlainTextEdit *txtStartPointY;
+    QLabel *lblRatio;
+    QPlainTextEdit *txtRatioA;
+    QPlainTextEdit *txtRatioB;
     QMenuBar *menuBar;
     QMenu *menuMenu;
     QMenu *menuEdit;
@@ -63,7 +66,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(625, 421);
+        MainWindow->resize(703, 589);
         BotaoFecha = new QAction(MainWindow);
         BotaoFecha->setObjectName(QString::fromUtf8("BotaoFecha"));
         actionRand = new QAction(MainWindow);
@@ -89,7 +92,7 @@ public:
         displayPaneArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 447, 247));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 449, 249));
         gridLayoutWidget = new QWidget(scrollAreaWidgetContents);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
         gridLayoutWidget->setGeometry(QRect(0, 0, 160, 80));
@@ -99,11 +102,9 @@ public:
         displayPaneLayout->setObjectName(QString::fromUtf8("displayPaneLayout"));
         displayPaneLayout->setContentsMargins(0, 0, 0, 0);
         displayPaneArea->setWidget(scrollAreaWidgetContents);
-        gridLayoutWidget->raise();
-        displayPane->raise();
         btnScaleImage = new QPushButton(centralWidget);
         btnScaleImage->setObjectName(QString::fromUtf8("btnScaleImage"));
-        btnScaleImage->setGeometry(QRect(480, 340, 92, 27));
+        btnScaleImage->setGeometry(QRect(480, 420, 92, 27));
         lblWidth = new QLabel(centralWidget);
         lblWidth->setObjectName(QString::fromUtf8("lblWidth"));
         lblWidth->setGeometry(QRect(480, 110, 59, 17));
@@ -118,20 +119,29 @@ public:
         txtHeight->setGeometry(QRect(480, 60, 81, 41));
         btnCropImage = new QPushButton(centralWidget);
         btnCropImage->setObjectName(QString::fromUtf8("btnCropImage"));
-        btnCropImage->setGeometry(QRect(480, 300, 91, 31));
+        btnCropImage->setGeometry(QRect(480, 380, 91, 31));
         txtStartPointX = new QPlainTextEdit(centralWidget);
         txtStartPointX->setObjectName(QString::fromUtf8("txtStartPointX"));
-        txtStartPointX->setGeometry(QRect(480, 200, 91, 41));
+        txtStartPointX->setGeometry(QRect(480, 280, 91, 41));
         lblStartPoint = new QLabel(centralWidget);
         lblStartPoint->setObjectName(QString::fromUtf8("lblStartPoint"));
-        lblStartPoint->setGeometry(QRect(480, 180, 91, 17));
+        lblStartPoint->setGeometry(QRect(480, 260, 91, 17));
         txtStartPointY = new QPlainTextEdit(centralWidget);
         txtStartPointY->setObjectName(QString::fromUtf8("txtStartPointY"));
-        txtStartPointY->setGeometry(QRect(480, 250, 91, 41));
+        txtStartPointY->setGeometry(QRect(480, 330, 91, 41));
+        lblRatio = new QLabel(centralWidget);
+        lblRatio->setObjectName(QString::fromUtf8("lblRatio"));
+        lblRatio->setGeometry(QRect(480, 180, 91, 17));
+        txtRatioA = new QPlainTextEdit(centralWidget);
+        txtRatioA->setObjectName(QString::fromUtf8("txtRatioA"));
+        txtRatioA->setGeometry(QRect(480, 200, 31, 41));
+        txtRatioB = new QPlainTextEdit(centralWidget);
+        txtRatioB->setObjectName(QString::fromUtf8("txtRatioB"));
+        txtRatioB->setGeometry(QRect(520, 200, 31, 41));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 625, 23));
+        menuBar->setGeometry(QRect(0, 0, 703, 25));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
         menuEdit = new QMenu(menuBar);
@@ -172,6 +182,7 @@ public:
         lblHeight->setText(QApplication::translate("MainWindow", "Height:", 0, QApplication::UnicodeUTF8));
         btnCropImage->setText(QApplication::translate("MainWindow", "Crop...", 0, QApplication::UnicodeUTF8));
         lblStartPoint->setText(QApplication::translate("MainWindow", "Start Point:", 0, QApplication::UnicodeUTF8));
+        lblRatio->setText(QApplication::translate("MainWindow", "Ratio:", 0, QApplication::UnicodeUTF8));
         menuMenu->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
         menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

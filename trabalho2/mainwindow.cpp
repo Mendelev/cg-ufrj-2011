@@ -43,11 +43,14 @@ void MainWindow::hideEverything(){
     ui->lblHeight->hide();
     ui->lblWidth->hide();
     ui->lblStartPoint->hide();
+    ui->lblRatio->hide();
 
     ui->txtHeight->hide();
     ui->txtWidth->hide();
     ui->txtStartPointX->hide();
     ui->txtStartPointY->hide();
+    ui->txtRatioA->hide();
+    ui->txtRatioB->hide();
 
 }
 
@@ -83,14 +86,24 @@ void MainWindow::showScale(){
 
     ui->txtHeight->show();
     ui->txtWidth->show();
+    ui->txtRatioA->show();
+    ui->txtRatioB->show();
+
+
+
+
     ui->lblHeight->show();
     ui->lblWidth->show();
+    ui->lblRatio->show();
+
+
     ui->btnScaleImage->show();
+
 }
 
 void MainWindow::scaleImage(){
 
-    this->imgResizer = ImageResizer(this->mainImage->toImage(),ui->txtWidth->toPlainText().toInt(),ui->txtHeight->toPlainText().toInt());
+    this->imgResizer = ImageResizer(this->mainImage->toImage(),ui->txtWidth->toPlainText().toInt(),ui->txtHeight->toPlainText().toInt(),ui->txtRatioA->toPlainText().toInt(), ui->txtRatioB->toPlainText().toInt());
     this->imgResizer.transform();
 
 
@@ -131,6 +144,9 @@ void MainWindow::loadImage(){
     ui->txtWidth->setPlainText(QString::number(mainImage->width()));
     ui->txtHeight->setPlainText(QString::number(mainImage->height()));
 
+    ui->txtRatioA->setPlainText(QString::number(0));
+    ui->txtRatioB->setPlainText(QString::number(0));
+
 
     ui->displayPaneArea->resize(1200,650);
 
@@ -141,11 +157,15 @@ void MainWindow::loadImage(){
     ui->lblHeight->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->lblHeight->y());
     ui->lblWidth->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->lblWidth->y());
     ui->lblStartPoint->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->lblStartPoint->y());
+    ui->lblRatio->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->lblRatio->y());
 
     ui->txtHeight->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtHeight->y());
     ui->txtWidth->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtWidth->y());
     ui->txtStartPointX->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtStartPointX->y());
     ui->txtStartPointY->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtStartPointY->y());
+
+    ui->txtRatioA->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + 10,  ui->txtRatioA->y());
+    ui->txtRatioB->move(ui->displayPaneArea->x()+ui->displayPaneArea->width() + ui->txtRatioA->width() + 20 ,  ui->txtRatioB->y());
 
    ui->displayPane->setPixmap(*mainImage);
 }
