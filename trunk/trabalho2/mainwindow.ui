@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>625</width>
-    <height>421</height>
+    <width>703</width>
+    <height>589</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -60,8 +60,8 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>447</width>
-       <height>247</height>
+       <width>449</width>
+       <height>249</height>
       </rect>
      </property>
      <widget class="QWidget" name="gridLayoutWidget">
@@ -75,15 +75,13 @@
       </property>
       <layout class="QGridLayout" name="displayPaneLayout"/>
      </widget>
-     <zorder>gridLayoutWidget</zorder>
-     <zorder>displayPane</zorder>
     </widget>
    </widget>
    <widget class="QPushButton" name="btnScaleImage">
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>340</y>
+      <y>420</y>
       <width>92</width>
       <height>27</height>
      </rect>
@@ -142,7 +140,7 @@
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>300</y>
+      <y>380</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -155,7 +153,7 @@
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>200</y>
+      <y>280</y>
       <width>91</width>
       <height>41</height>
      </rect>
@@ -165,7 +163,7 @@
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>180</y>
+      <y>260</y>
       <width>91</width>
       <height>17</height>
      </rect>
@@ -178,8 +176,41 @@
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>250</y>
+      <y>330</y>
       <width>91</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblRatio">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>180</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ratio:</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="txtRatioA">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>200</y>
+      <width>31</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="txtRatioB">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>200</y>
+      <width>31</width>
       <height>41</height>
      </rect>
     </property>
@@ -190,8 +221,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>625</width>
-     <height>23</height>
+     <width>703</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">
