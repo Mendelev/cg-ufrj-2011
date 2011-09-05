@@ -17,10 +17,21 @@ ImageResizer::ImageResizer(QImage image, int newWidth, int newHeight)
     this->oldImage = image;
     this->oldHeight = image.height();
     this->oldWidth = image.width();
-    this->newHeight = newHeight;
-    this->newWidth = newWidth;
-    this->scaleAToBHeight = (1.0* oldHeight)/newHeight;
-    this->scaleAToBWidth =(1.0* oldWidth)/newWidth;
+    this->razao = 1.0 * oldWidth / oldHeight ;
+    if (newHeight!=0){
+        this->newHeight = newHeight;
+    }
+    else{
+        this->newHeight = (int) (1.0*newWidth)/razao;
+    }
+    if (newWidth!=0){
+        this->newWidth = newWidth;
+    }
+    else{
+        this->newWidth = (int) (1.0*newHeight)*razao;
+    }
+    this->scaleAToBHeight = (1.0* oldHeight)/this->newHeight;
+    this->scaleAToBWidth =(1.0* oldWidth)/this->newWidth;
 
 }
 
