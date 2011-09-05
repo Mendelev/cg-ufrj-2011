@@ -1,4 +1,4 @@
-#include "imageresizer.h"
+#include "imagefilter.h"
 #include <QDebug>
 #include <cor.h>
 #include <cmath>
@@ -6,24 +6,19 @@
 
 using namespace std;
 
-ImageResizer::ImageResizer()
+ImageFilter::ImageFilter()
 {
 
 }
 
-ImageResizer::ImageResizer(QImage image, int newWidth, int newHeight,int proporcao1, int proporcao2)
+ImageFilter::ImageFilter(QImage image, int newWidth, int newHeight)
 {
 
     this->oldImage = image;
     this->oldHeight = image.height();
     this->oldWidth = image.width();
-    if((proporcao1!=0 )&&(proporcao2!=0)){
-        this->razao=1.0* proporcao1 /proporcao2;
-    }
-    else{
-        this->razao = 1.0 * oldWidth / oldHeight ;
-    }
-        if (newHeight!=0){
+    this->razao = 1.0 * oldWidth / oldHeight ;
+    if (newHeight!=0){
         this->newHeight = newHeight;
     }
     else{
@@ -40,7 +35,7 @@ ImageResizer::ImageResizer(QImage image, int newWidth, int newHeight,int proporc
 
 }
 
-Cor ImageResizer::funcaoDeEscolha(int x,int y){
+Cor ImageFilter::funcaoDeEscolha(int x,int y){
     int escolhidoX,escolhidoY;
 
 //   float parteInteira;
@@ -57,26 +52,28 @@ Cor ImageResizer::funcaoDeEscolha(int x,int y){
    return a;
 }
 
-void ImageResizer::aplicaCor(Cor cor,int i,int j){
+void ImageFilter::aplicaCor(Cor cor,int i,int j){
 
-    newData[acessaPosicaoNew(i,j)+0]=cor.R;
-    newData[acessaPosicaoNew(i,j)+1]=cor.G;
-    newData[acessaPosicaoNew(i,j)+2]=cor.B;
+    int media=(cor.R+cor.G+cor.B)/3;
+    //newData[acessaPosicaoNew(i,j)+3]=cor.A;
+    newData[acessaPosicaoNew(i,j)+0]=media;
+    newData[acessaPosicaoNew(i,j)+1]=media;
+    newData[acessaPosicaoNew(i,j)+2]=media;
     newData[acessaPosicaoNew(i,j)+3]=cor.A;
 
 
 }
 
-int ImageResizer::acessaPosicao(int x, int y){
+int ImageFilter::acessaPosicao(int x, int y){
     return  (y*oldWidth+x)*4;
 
 }
-int ImageResizer::acessaPosicaoNew(int x, int y){
+int ImageFilter::acessaPosicaoNew(int x, int y){
     return  (y*newWidth+x)*4;
 
 }
 
-void ImageResizer::transform(){
+void ImageFilter::transform(){
 
     vetor = oldImage.bits();
     //qDebug()<<vetor[acessaPosicao(oldWidth-1,oldHeight-1)+0]<<" red " <<vetor[acessaPosicao(oldWidth-1,oldHeight-1)+1]<<" green "<< vetor[acessaPosicao(oldWidth-1,oldHeight-1)+2] <<" blue " << vetor[acessaPosicao(oldWidth-1,oldHeight-1)+3] <<" alpha ";
