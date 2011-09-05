@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Thu Aug 18 02:22:55 2011
+** Created: Thu Aug 18 05:48:55 2011
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -35,6 +35,8 @@ public:
     QAction *BotaoFecha;
     QAction *actionRand;
     QAction *actionExit;
+    QAction *actionScale;
+    QAction *actionCrop;
     QWidget *centralWidget;
     QPushButton *btnLoadImage;
     QLabel *displayPane;
@@ -48,8 +50,11 @@ public:
     QPlainTextEdit *txtWidth;
     QPlainTextEdit *txtHeight;
     QPushButton *btnCropImage;
+    QPlainTextEdit *txtStartPoint;
+    QLabel *lblStartPoint;
     QMenuBar *menuBar;
     QMenu *menuMenu;
+    QMenu *menuEdit;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -64,6 +69,10 @@ public:
         actionRand->setObjectName(QString::fromUtf8("actionRand"));
         actionExit = new QAction(MainWindow);
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
+        actionScale = new QAction(MainWindow);
+        actionScale->setObjectName(QString::fromUtf8("actionScale"));
+        actionCrop = new QAction(MainWindow);
+        actionCrop->setObjectName(QString::fromUtf8("actionCrop"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         btnLoadImage = new QPushButton(centralWidget);
@@ -72,6 +81,7 @@ public:
         displayPane = new QLabel(centralWidget);
         displayPane->setObjectName(QString::fromUtf8("displayPane"));
         displayPane->setGeometry(QRect(0, 0, 66, 21));
+        displayPane->setCursor(QCursor(Qt::ArrowCursor));
         displayPaneArea = new QScrollArea(centralWidget);
         displayPaneArea->setObjectName(QString::fromUtf8("displayPaneArea"));
         displayPaneArea->setGeometry(QRect(0, 0, 451, 251));
@@ -93,25 +103,33 @@ public:
         btnScaleImage->setGeometry(QRect(470, 210, 92, 27));
         lblWidth = new QLabel(centralWidget);
         lblWidth->setObjectName(QString::fromUtf8("lblWidth"));
-        lblWidth->setGeometry(QRect(470, 50, 59, 17));
+        lblWidth->setGeometry(QRect(120, 260, 59, 17));
         lblHeight = new QLabel(centralWidget);
         lblHeight->setObjectName(QString::fromUtf8("lblHeight"));
-        lblHeight->setGeometry(QRect(470, 130, 59, 17));
+        lblHeight->setGeometry(QRect(20, 260, 59, 17));
         txtWidth = new QPlainTextEdit(centralWidget);
         txtWidth->setObjectName(QString::fromUtf8("txtWidth"));
-        txtWidth->setGeometry(QRect(470, 80, 81, 41));
+        txtWidth->setGeometry(QRect(120, 280, 81, 41));
         txtHeight = new QPlainTextEdit(centralWidget);
         txtHeight->setObjectName(QString::fromUtf8("txtHeight"));
-        txtHeight->setGeometry(QRect(470, 150, 81, 41));
+        txtHeight->setGeometry(QRect(20, 280, 81, 41));
         btnCropImage = new QPushButton(centralWidget);
         btnCropImage->setObjectName(QString::fromUtf8("btnCropImage"));
         btnCropImage->setGeometry(QRect(470, 250, 95, 31));
+        txtStartPoint = new QPlainTextEdit(centralWidget);
+        txtStartPoint->setObjectName(QString::fromUtf8("txtStartPoint"));
+        txtStartPoint->setGeometry(QRect(230, 280, 91, 41));
+        lblStartPoint = new QLabel(centralWidget);
+        lblStartPoint->setObjectName(QString::fromUtf8("lblStartPoint"));
+        lblStartPoint->setGeometry(QRect(230, 260, 91, 17));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 600, 29));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
+        menuEdit = new QMenu(menuBar);
+        menuEdit->setObjectName(QString::fromUtf8("menuEdit"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -121,8 +139,12 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuMenu->menuAction());
+        menuBar->addAction(menuEdit->menuAction());
         menuMenu->addAction(actionExit);
         menuMenu->addSeparator();
+        menuEdit->addAction(actionScale);
+        menuEdit->addSeparator();
+        menuEdit->addAction(actionCrop);
 
         retranslateUi(MainWindow);
 
@@ -135,13 +157,17 @@ public:
         BotaoFecha->setText(QApplication::translate("MainWindow", "fechar", 0, QApplication::UnicodeUTF8));
         actionRand->setText(QApplication::translate("MainWindow", "Rand", 0, QApplication::UnicodeUTF8));
         actionExit->setText(QApplication::translate("MainWindow", "Exit", 0, QApplication::UnicodeUTF8));
+        actionScale->setText(QApplication::translate("MainWindow", "Scale...", 0, QApplication::UnicodeUTF8));
+        actionCrop->setText(QApplication::translate("MainWindow", "Crop...", 0, QApplication::UnicodeUTF8));
         btnLoadImage->setText(QApplication::translate("MainWindow", "Load Image...", 0, QApplication::UnicodeUTF8));
         displayPane->setText(QString());
         btnScaleImage->setText(QApplication::translate("MainWindow", "Scale...", 0, QApplication::UnicodeUTF8));
         lblWidth->setText(QApplication::translate("MainWindow", "Width:", 0, QApplication::UnicodeUTF8));
         lblHeight->setText(QApplication::translate("MainWindow", "Height:", 0, QApplication::UnicodeUTF8));
         btnCropImage->setText(QApplication::translate("MainWindow", "Crop...", 0, QApplication::UnicodeUTF8));
+        lblStartPoint->setText(QApplication::translate("MainWindow", "Start Point:", 0, QApplication::UnicodeUTF8));
         menuMenu->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
+        menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

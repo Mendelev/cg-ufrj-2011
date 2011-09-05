@@ -22,12 +22,31 @@ MainWindow::MainWindow(QWidget *parent) :  QMainWindow(parent),  ui(new Ui::Main
     connect(ui->btnLoadImage,SIGNAL(clicked()),this,SLOT(loadImage()));
     connect(ui->btnScaleImage,SIGNAL(clicked()),this,SLOT(scaleImage()));
     connect(ui->btnCropImage,SIGNAL(clicked()),this,SLOT(cropImage()));
+    connect(ui->actionCrop, SIGNAL(triggered()), this, SLOT(showCrop()));
+    connect(ui->actionScale, SIGNAL(triggered()),this,SLOT(showScale()));
     ui->displayPaneArea->setWidget(ui->displayPane);
+
+    hideEverything();
+
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::hideEverything(){
+    ui->btnCropImage->hide();
+    ui->btnScaleImage->hide();
+
+    ui->lblHeight->hide();
+    ui->lblWidth->hide();
+    ui->lblStartPoint->hide();
+
+    ui->txtHeight->hide();
+    ui->txtWidth->hide();
+    ui->txtStartPoint->hide();
 }
 
 void MainWindow::changeEvent(QEvent *e)
@@ -45,7 +64,9 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::mousePressEvent(QMouseEvent *e){
     if(e->button() == Qt::LeftButton){
-        this->startCrop = e->pos();
+        QPoint realStartCrop = QPoint(e->pos().x(),e->pos().y() - 33);
+        this->startCrop = realStartCrop;
+        ui->txtStartPoint->insertPlainText("Glu, glu , IE IE!");
     }
 }
 
@@ -55,6 +76,14 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *e){
     }
 }
 
+void MainWindow::showScale(){
+
+    ui->txtHeight->show();
+    ui->txtWidth->show();
+    ui->lblHeight->show();
+    ui->lblWidth->show();
+    ui->btnScaleImage->show();
+}
 
 void MainWindow::scaleImage(){
 
@@ -64,11 +93,27 @@ void MainWindow::scaleImage(){
 
 }
 
+void MainWindow::showCrop(){
+    ui->lblHeight->show();
+    ui->lblWidth->show();
+
+    ui->txtHeight->show();
+    ui->txtWidth->show();
+
+    ui->btnCropImage->show();
+
+    ui->txtStartPoint->show();
+    ui->lblStartPoint->show();
+}
+
 void MainWindow::cropImage(){
+
+
     int width = this->endCrop.x() - this->startCrop.x();
     int height = this->endCrop.y() - this->startCrop.y();
     this->imgCropper = ImageCropper(this->mainImage->toImage(), width, height,this->startCrop);
     this->imgCropper.transform();
+
 }
 
 void MainWindow::loadImage(){
@@ -78,9 +123,9 @@ void MainWindow::loadImage(){
 
    this->mainImage = new QPixmap(fileName);
 
+
     ui->txtWidth->setPlainText(QString::number(mainImage->width()));
     ui->txtHeight->setPlainText(QString::number(mainImage->height()));
-
 
 
 
