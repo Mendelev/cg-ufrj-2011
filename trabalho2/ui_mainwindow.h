@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Mon Sep 5 10:45:29 2011
+** Created: Mon Sep 5 10:55:57 2011
 **      by: Qt User Interface Compiler version 4.6.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -57,6 +57,9 @@ public:
     QLabel *lblRatio;
     QPlainTextEdit *txtRatioA;
     QPlainTextEdit *txtRatioB;
+    QLabel *lblAlpha;
+    QPlainTextEdit *txtAlpha;
+    QPushButton *btnGScale;
     QMenuBar *menuBar;
     QMenu *menuMenu;
     QMenu *menuEdit;
@@ -141,6 +144,15 @@ public:
         txtRatioB = new QPlainTextEdit(centralWidget);
         txtRatioB->setObjectName(QString::fromUtf8("txtRatioB"));
         txtRatioB->setGeometry(QRect(520, 200, 31, 41));
+        lblAlpha = new QLabel(centralWidget);
+        lblAlpha->setObjectName(QString::fromUtf8("lblAlpha"));
+        lblAlpha->setGeometry(QRect(480, 40, 59, 17));
+        txtAlpha = new QPlainTextEdit(centralWidget);
+        txtAlpha->setObjectName(QString::fromUtf8("txtAlpha"));
+        txtAlpha->setGeometry(QRect(480, 60, 81, 41));
+        btnGScale = new QPushButton(centralWidget);
+        btnGScale->setObjectName(QString::fromUtf8("btnGScale"));
+        btnGScale->setGeometry(QRect(480, 110, 111, 27));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -189,6 +201,8 @@ public:
         btnCropImage->setText(QApplication::translate("MainWindow", "Crop...", 0, QApplication::UnicodeUTF8));
         lblStartPoint->setText(QApplication::translate("MainWindow", "Start Point:", 0, QApplication::UnicodeUTF8));
         lblRatio->setText(QApplication::translate("MainWindow", "Ratio:", 0, QApplication::UnicodeUTF8));
+        lblAlpha->setText(QApplication::translate("MainWindow", "Alpha:", 0, QApplication::UnicodeUTF8));
+        btnGScale->setText(QApplication::translate("MainWindow", "Go GrayScale...", 0, QApplication::UnicodeUTF8));
         menuMenu->setTitle(QApplication::translate("MainWindow", "File", 0, QApplication::UnicodeUTF8));
         menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", 0, QApplication::UnicodeUTF8));
     } // retranslateUi

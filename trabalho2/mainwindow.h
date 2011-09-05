@@ -43,6 +43,7 @@ public slots:
     void showScale();
     void showCrop();
     void toGScale();
+    void showGScale();
 
 };
 
