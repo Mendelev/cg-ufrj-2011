@@ -239,6 +239,8 @@
     <addaction name="actionScale"/>
     <addaction name="separator"/>
     <addaction name="actionCrop"/>
+    <addaction name="separator"/>
+    <addaction name="actionGScale"/>
    </widget>
    <addaction name="menuMenu"/>
    <addaction name="menuEdit"/>
@@ -275,6 +277,11 @@
   <action name="actionCrop">
    <property name="text">
     <string>Crop...</string>
+   </property>
+  </action>
+  <action name="actionGScale">
+   <property name="text">
+    <string>Gray Scale...</string>
    </property>
   </action>
  </widget>

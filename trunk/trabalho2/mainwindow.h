@@ -7,6 +7,7 @@
 #include <iostream>
 #include <imageresizer.h>
 #include <imagecropper.h>
+#include <imagefilter.h>
 
 namespace Ui {
     class MainWindow;
@@ -21,6 +22,7 @@ public:
     QString fileName;
     ImageResizer imgResizer;
     ImageCropper imgCropper;
+    ImageFilter imgFilter;
 
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -40,6 +42,7 @@ public slots:
     void cropImage();
     void showScale();
     void showCrop();
+    void toGScale();
 
 };
 
