@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Mon Sep 5 10:55:57 2011
-**      by: Qt User Interface Compiler version 4.6.3
+** Created: Mon Sep 5 11:11:20 2011
+**      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -98,7 +98,7 @@ public:
         displayPaneArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 449, 249));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 447, 247));
         gridLayoutWidget = new QWidget(scrollAreaWidgetContents);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
         gridLayoutWidget->setGeometry(QRect(0, 0, 160, 80));
@@ -146,17 +146,17 @@ public:
         txtRatioB->setGeometry(QRect(520, 200, 31, 41));
         lblAlpha = new QLabel(centralWidget);
         lblAlpha->setObjectName(QString::fromUtf8("lblAlpha"));
-        lblAlpha->setGeometry(QRect(480, 40, 59, 17));
+        lblAlpha->setGeometry(QRect(580, 40, 41, 17));
         txtAlpha = new QPlainTextEdit(centralWidget);
         txtAlpha->setObjectName(QString::fromUtf8("txtAlpha"));
-        txtAlpha->setGeometry(QRect(480, 60, 81, 41));
+        txtAlpha->setGeometry(QRect(580, 60, 81, 41));
         btnGScale = new QPushButton(centralWidget);
         btnGScale->setObjectName(QString::fromUtf8("btnGScale"));
         btnGScale->setGeometry(QRect(480, 110, 111, 27));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 703, 25));
+        menuBar->setGeometry(QRect(0, 0, 703, 23));
         menuMenu = new QMenu(menuBar);
         menuMenu->setObjectName(QString::fromUtf8("menuMenu"));
         menuEdit = new QMenu(menuBar);
