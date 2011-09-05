@@ -8,6 +8,7 @@
 class ImageFilter
 {
 private:
+    int alpha;
     uchar * newData;
     uchar * vetor;
     int oldHeight, oldWidth;
@@ -20,7 +21,7 @@ private:
 public:
    void transform();
 
-   ImageFilter(QImage image, int newWidth, int newHeight);
+   ImageFilter(QImage image, int newWidth, int newHeight, int alpha);
    ImageFilter();
    int acessaPosicao(int x, int y);
     int acessaPosicaoNew(int x, int y);

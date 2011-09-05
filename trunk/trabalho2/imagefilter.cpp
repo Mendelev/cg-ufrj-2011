@@ -11,9 +11,9 @@ ImageFilter::ImageFilter()
 
 }
 
-ImageFilter::ImageFilter(QImage image, int newWidth, int newHeight)
+ImageFilter::ImageFilter(QImage image, int newWidth, int newHeight,int alpha)
 {
-
+    this->alpha = alpha;
     this->oldImage = image;
     this->oldHeight = image.height();
     this->oldWidth = image.width();
@@ -59,7 +59,7 @@ void ImageFilter::aplicaCor(Cor cor,int i,int j){
     newData[acessaPosicaoNew(i,j)+0]=media;
     newData[acessaPosicaoNew(i,j)+1]=media;
     newData[acessaPosicaoNew(i,j)+2]=media;
-    newData[acessaPosicaoNew(i,j)+3]=cor.A;
+    newData[acessaPosicaoNew(i,j)+3]=this->alpha;
 
 
 }
