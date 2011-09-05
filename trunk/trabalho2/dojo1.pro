@@ -7,12 +7,16 @@ SOURCES += main.cpp \
     mainwindow.cpp \
     imageresizer.cpp \
     cor.cpp \
-    imagecropper.cpp
+    imagecropper.cpp \
+    imagefilter.cpp
 HEADERS += mainwindow.h \
     imageresizer.h \
     cor.h \
-    imagecropper.h
+    imagecropper.h \
+    imagefilter.h
 FORMS += mainwindow.ui
+
+
 
 
 

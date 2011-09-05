@@ -1,27 +1,27 @@
-#ifndef IMAGERESIZER_H
-#define IMAGERESIZER_H
+#ifndef IMAGEFILTER_H
+#define IMAGEFILTER_H
+
 #include <QRgb>
 #include <QImage>
 #include <cor.h>
 
-class ImageResizer
+class ImageFilter
 {
 private:
     uchar * newData;
     uchar * vetor;
-    int oldHeight, oldWidth,proporcao1,proporcao2;
+    int oldHeight, oldWidth;
     int newHeight ,newWidth;
     double razao;
     double scaleAToBHeight, scaleAToBWidth;
     QImage newImage;
     QImage oldImage;
 
-
 public:
    void transform();
 
-   ImageResizer(QImage image, int newWidth, int newHeight);
-   ImageResizer();
+   ImageFilter(QImage image, int newWidth, int newHeight);
+   ImageFilter();
    int acessaPosicao(int x, int y);
     int acessaPosicaoNew(int x, int y);
    void aplicaCor(Cor cor,int i,int j);
@@ -32,4 +32,4 @@ public:
 
 };
 
-#endif // IMAGERESIZER_H
+#endif // IMAGEFILTER_H
