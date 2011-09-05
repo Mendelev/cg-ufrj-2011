@@ -20,7 +20,7 @@ private:
 public:
    void transform();
 
-   ImageResizer(QImage image, int newWidth, int newHeight);
+   ImageResizer(QImage image, int newWidth, int newHeight ,int proporcao1, int proporcao2);
    ImageResizer();
    int acessaPosicao(int x, int y);
     int acessaPosicaoNew(int x, int y);
