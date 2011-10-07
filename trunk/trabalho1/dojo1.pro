@@ -6,10 +6,14 @@ TEMPLATE = app
 SOURCES += main.cpp \
     mainwindow.cpp \
     imageresizer.cpp \
-    cor.cpp
+    cor.cpp \
+    imagecropper.cpp
 HEADERS += mainwindow.h \
     imageresizer.h \
-    cor.h
+    cor.h \
+    imagecropper.h
 FORMS += mainwindow.ui
+
+
 
 
