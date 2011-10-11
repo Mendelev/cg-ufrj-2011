@@ -26,7 +26,8 @@ enum Commands{
     FACES,
     SELECT,
     DELETA,
-    VDV
+    VDV,
+    ADICIONA
 };
 
 typedef struct _ExCom{

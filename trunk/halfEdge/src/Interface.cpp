@@ -28,14 +28,19 @@ void Interface::addFace(QVector<QPointF> in)
 {
     Face *f = new Face();
     HalfEdge *ant = NULL;
-    HalfEdge *first, *twin;
+    HalfEdge *first, *twin, *temp;
 
     for(int i = 0; i < in.size(); i++)
     {
         HalfEdge *e = new HalfEdge();
         if (i == 0)     first = e;
 
-        map[qMakePair(in[i], in[(i+1)%in.size()])] = e;
+        temp = findTwin(in[i],in[(i+1)%in.size()]);
+        if (temp != NULL)
+            e = temp;
+        else
+            map[qMakePair(in[i], in[(i+1)%in.size()])] = e;
+
         twin = findTwin(in[(i+1)%in.size()],in[i]);
 
         minX = MIN(minX, in[i].x());
@@ -388,5 +393,32 @@ void Interface::removeEdgeFromCollection(HalfEdge* e)
             componentesFaceExterna[i] = componentesFaceExterna[i]->getProx();
             break;
         }
+    }
+}
+
+void Interface::adicionaVerticeDentro(QPointF p){
+    QVector<QPointF> pontos;
+    Face *f = getFaceNear(p);
+
+    HalfEdge *h, *atual;
+
+    atual = f->getOuterComp();
+    h = f->getOuterComp();
+
+    pontos.clear();
+    pontos.push_back(p);
+    pontos.push_back(atual->getOrigem()->getPoint());
+    pontos.push_back(atual->getAnt()->getOrigem()->getPoint());
+    addFace(pontos);
+
+    atual = h->getProx();
+    while(h != atual){
+        pontos.clear();
+        pontos.push_back(p);
+        pontos.push_back(atual->getOrigem()->getPoint());
+        pontos.push_back(atual->getAnt()->getOrigem()->getPoint());
+        addFace(pontos);
+
+        atual = atual->getProx();
     }
 }

@@ -44,7 +44,7 @@ Render::Render(int w, int h, CommandQueue *c) {
     mostraFace = false;
     mostraPonto = false;
 
-
+    adicionaFlag = false;
 }
 
 void Render::run(void) {
@@ -104,6 +104,9 @@ void Render::run(void) {
                 break;
             case VDV:
                 vdv();
+                break;
+            case ADICIONA:
+                adiciona();
                 break;
         }
         atualizaScreen();
@@ -371,16 +374,27 @@ void Render::click(void)
     if(hsel != NULL)
         t = hsel->getTwin();
 
-    if(v == vsel && (h == hsel || h == t) && f == fsel)
-    {
-        vsel = NULL;
-        hsel = NULL;
-        fsel = NULL;
-    }else
-    {
-        vsel = v;
-        hsel = h;
-        fsel = f;
+    if (adicionaFlag) {
+        if (interface.isExterna(f)) {
+            qDebug() << "Nao adiciona na face externa";
+        } else {
+            interface.adicionaVerticeDentro(p1);
+            reiniciaBuffers(screenW * zoom, screenH * zoom);
+            atualizaScreen();
+        }
+        adicionaFlag = !adicionaFlag;
+    } else {
+        if(v == vsel && (h == hsel || h == t) && f == fsel)
+        {
+            vsel = NULL;
+            hsel = NULL;
+            fsel = NULL;
+        }else
+        {
+            vsel = v;
+            hsel = h;
+            fsel = f;
+        }
     }
 
     renderizaFront();
@@ -911,4 +925,9 @@ void Render::vdv()
         prox = prox->getTwin()->getProx();
     } while (prox != partida2);
 
+}
+
+void Render::adiciona()
+{
+    adicionaFlag = !adicionaFlag;
 }
