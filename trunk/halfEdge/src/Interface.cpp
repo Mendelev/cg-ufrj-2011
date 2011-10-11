@@ -333,8 +333,8 @@ void Interface::clear(void)
     maxY = -INF;
     faceExterna = NULL;
 
-    if(kdt != NULL)
-        delete kdt;
+    //if(kdt != NULL)
+    //    delete kdt;
     kdt = NULL;
 
     faces.clear();
