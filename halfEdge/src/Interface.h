@@ -40,7 +40,7 @@ QVector<Face*>& getFaces();
 
 void removeFaceFromCollection(Face*);
 void removeEdgeFromCollection(HalfEdge*);
-
+void adicionaVerticeDentro(QPointF p);
 
 private:
     KDTree *kdt;
@@ -57,7 +57,6 @@ private:
     double vProd(QPointF p1, QPointF p2);
     double eProd(QPointF p1, QPointF p2);
     double modulo2(QPointF p1, QPointF p2);
-
 };
 
 #endif // INTERFACE_H

@@ -45,6 +45,7 @@ MainWindow::MainWindow()
     face = tb->addAction(f, "");
     del = tb->addAction("deleta");
     vdv = tb->addAction("VDV");
+    add = tb->addAction("Adicionar");
 
     addToolBar(Qt::LeftToolBarArea, tb);
 
@@ -91,6 +92,9 @@ void MainWindow::clicou(QAction* a)
     }else if(a == vdv)
     {
         fila->produz(VDV);
+    }else if (a == add)
+    {
+        fila->produz(ADICIONA);
     }
 }
 

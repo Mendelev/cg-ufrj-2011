@@ -60,6 +60,7 @@ private:
         bool componenteFaceUnica(HalfEdge *h);
         void deleta();
         void vdv();
+        void adiciona();
 
         Vertex* vsel;
         HalfEdge* hsel;
@@ -89,7 +90,9 @@ private:
 
         QPen faceExternaBack;
         QPen arestaGrossaBack;
-        QPen verticeGrossoBack;        
+        QPen verticeGrossoBack;
+
+        bool adicionaFlag;
 };
 
 uint qHash(const QPointF&);
