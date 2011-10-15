@@ -53,8 +53,8 @@ MainWindow::MainWindow()
 
     connect(centralpanel, SIGNAL(atualizaMain()), this, SLOT(update()));
 
-    setWindowTitle("trab2FT 0.0.1");
-    setFixedSize(800, 600);
+    setWindowTitle("Trabalho 2 : Bruno Campos e Thalles Rodrigues");
+    setFixedSize(1024, 768);
 }
 
 
