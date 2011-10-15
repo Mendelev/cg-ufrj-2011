@@ -908,7 +908,7 @@ void Render::vdv()
 
     prox = partida2;
     do {
-        aux = prox->getDestino();
+        aux = prox->getDestino();//TODO THALLES
         buff.drawEllipse(transforma(aux->getPoint()),5,5);
 
         prox = prox->getTwin()->getProx();

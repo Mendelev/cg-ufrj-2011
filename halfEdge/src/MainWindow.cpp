@@ -2,7 +2,7 @@
 #include <QPainter>
 #include <Qt>
 #include <CommandQueue.h>
-
+#include <QDebug>
 MainWindow::MainWindow()
 {
     //conecta os icones com suas imagem nos resources
@@ -57,8 +57,8 @@ MainWindow::MainWindow()
 
     connect(centralpanel, SIGNAL(atualizaMain()), this, SLOT(update()));
 
-    setWindowTitle("trab2FT 0.0.2");
-    setFixedSize(800, 600);
+    setWindowTitle("Trabalho 2 2011-2 Bruno Campos e Thalles Rodrigues");
+    setFixedSize(1024,768);
 }
 
 
