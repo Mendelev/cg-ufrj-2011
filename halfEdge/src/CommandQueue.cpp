@@ -13,7 +13,7 @@ CommandQueue::CommandQueue()
 
 void CommandQueue::produz(Commands cmd, int x , int y )
 {
-     QMutexLocker locker(&m);
+    QMutexLocker locker(&m);
 
     cmdList[indPro].cmd = cmd;
     cmdList[indPro].x = x;

@@ -2,7 +2,7 @@
 #include <QPaintDevice>
 #include <PlyParser.h>
 #include <QRgb>
-
+#include <QFileDialog>
 
 Render::Render(int w, int h, CommandQueue *c) {
 
@@ -107,9 +107,6 @@ void Render::run(void) {
                 break;
             case ADICIONA:
                 adiciona();
-                break;
-            case SALVA:
-                salva();
                 break;
         }
         atualizaScreen();
@@ -934,6 +931,8 @@ void Render::adiciona()
     adicionaFlag = !adicionaFlag;
 }
 
-void Render::salva(){
-    //TODO THALLES
+void Render::recebeArquivoSalvar(const QString &filename){
+    if (filename != "") {
+        qDebug() << "Salvar arquivo: " << filename;
+    }
 }

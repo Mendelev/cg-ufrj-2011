@@ -16,19 +16,19 @@
 
 class Render : public QThread
 {
-	Q_OBJECT
+    Q_OBJECT
 
 signals:
-        void renderizado(const QImage &screen);
+    void renderizado(const QImage &screen);
 
         
 public slots:
     void updateScreen(int w, int y);
     void recebeArquivo(const QString &);
-
+    void recebeArquivoSalvar(const QString &);
                 
 public:
-        Render(int w, int y, CommandQueue *c);
+    Render(int w, int y, CommandQueue *c);
 
     void run(void);
 

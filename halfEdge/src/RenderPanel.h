@@ -19,9 +19,11 @@ signals:
     void atualizaMain(void);
     void atualizaTamanho(int , int);
     void enviaArquivo(const QString &);
+    void enviaArquivoSalvar(const QString &);
 
 public:
     RenderPanel(CommandQueue *c);
+    void recebeArquivoSalvar(const QString &);
 
 private:
 
