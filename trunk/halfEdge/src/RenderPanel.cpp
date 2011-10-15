@@ -37,6 +37,7 @@ void RenderPanel::update(const QImage& screen)
 void RenderPanel::recebeArquivo(const QString &filename)
 {
     emit enviaArquivo(filename);
+    //TODO THALLES
 }
 
 void RenderPanel::mouseReleaseEvent(QMouseEvent *event)
