@@ -33,6 +33,7 @@ void RenderPanel::update(const QImage& screen)
     emit atualizaMain();
 }
 
+//vem quando o sinal do fileDialog seleciona um arquivo
 void RenderPanel::recebeArquivo(const QString &filename)
 {
     emit enviaArquivo(filename);
