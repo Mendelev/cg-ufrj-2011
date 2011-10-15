@@ -61,6 +61,7 @@ private:
         void deleta();
         void vdv();
         void adiciona();
+        void salva();
 
         Vertex* vsel;
         HalfEdge* hsel;

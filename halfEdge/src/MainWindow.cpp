@@ -25,8 +25,7 @@ MainWindow::MainWindow()
     fd = new QFileDialog(this, Qt::Window);
     fd->setDirectory("../../halfedge/resources");
     fd->setFilter("*.ply");
-    
-    
+
     connect(tb, SIGNAL(actionTriggered( QAction * )), this, SLOT(clicou(QAction*)));
     connect(fd, SIGNAL(fileSelected(const QString &)), centralpanel, SLOT(recebeArquivo(const QString &)));
     
@@ -48,6 +47,7 @@ MainWindow::MainWindow()
     del = tb->addAction("deleta");
     vdv = tb->addAction("VDV");
     add = tb->addAction("Adicionar");
+    sav = tb->addAction("salvar");
 
     addToolBar(Qt::LeftToolBarArea, tb);
 
@@ -99,6 +99,10 @@ void MainWindow::clicou(QAction* a)
     }else if (a == add)
     {
         fila->produz(ADICIONA);
+    }
+    else if (a == sav) {
+        fila->produz(SALVA);
+
     }
 }
 

@@ -33,6 +33,7 @@ private:
    QAction *del;
    QAction *vdv;
    QAction *add;
+   QAction *sav;
 
 };
 

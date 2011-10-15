@@ -108,6 +108,9 @@ void Render::run(void) {
             case ADICIONA:
                 adiciona();
                 break;
+            case SALVA:
+                salva();
+                break;
         }
         atualizaScreen();
     } while (true);
@@ -929,4 +932,8 @@ void Render::vdv()
 void Render::adiciona()
 {
     adicionaFlag = !adicionaFlag;
+}
+
+void Render::salva(){
+    //TODO THALLES
 }
