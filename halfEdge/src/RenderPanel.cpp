@@ -5,8 +5,8 @@ RenderPanel::RenderPanel(CommandQueue *c)
     cmdq = c;
     fundolb = new QLabel(this);
 
-    screenW = 750;
-    screenH = 550;
+    screenW = 1024;
+    screenH = 768;
 
     Render *r = new Render(screenW, screenH, c);
     connect(r, SIGNAL(renderizado(const QImage &)), this, SLOT(update(const QImage &)), Qt::QueuedConnection);
