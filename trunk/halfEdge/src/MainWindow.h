@@ -19,6 +19,8 @@ private:
    CommandQueue *fila;
    RenderPanel* centralpanel;
    QFileDialog *fd;
+   QFileDialog *fdSave;
+
    QToolBar * tb;
    QAction *open;
    QAction *zoomIn;
@@ -33,7 +35,7 @@ private:
    QAction *del;
    QAction *vdv;
    QAction *add;
-   QAction *sav;
+   QAction *salvar;
 
 };
 

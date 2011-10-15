@@ -25,11 +25,15 @@ MainWindow::MainWindow()
     fd = new QFileDialog(this, Qt::Window);
     fd->setDirectory("../../halfedge/resources");
     fd->setFilter("*.ply");
-
+    
+    fdSave = new QFileDialog(this, Qt::Window);
+    fdSave->setDirectory("../../halfedge/resources");
+    fdSave->setFilter("*.ply");
+    
     connect(tb, SIGNAL(actionTriggered( QAction * )), this, SLOT(clicou(QAction*)));
     connect(fd, SIGNAL(fileSelected(const QString &)), centralpanel, SLOT(recebeArquivo(const QString &)));
     
-    //atribuições da forma Qaction = Qtoolbar-> addAction (QIcon,Const char *)
+    //atribuicoes da forma Qaction = Qtoolbar-> addAction (QIcon,Const char *)
 
     open = tb->addAction(op,"");
     tb->addSeparator();
@@ -47,14 +51,14 @@ MainWindow::MainWindow()
     del = tb->addAction("deleta");
     vdv = tb->addAction("VDV");
     add = tb->addAction("Adicionar");
-    sav = tb->addAction("salvar");
+    salvar = tb->addAction("Salvar");
 
     addToolBar(Qt::LeftToolBarArea, tb);
 
     connect(centralpanel, SIGNAL(atualizaMain()), this, SLOT(update()));
 
-    setWindowTitle("Trabalho 2 : Bruno Campos e Thalles Rodrigues");
-    setFixedSize(1024, 768);
+    setWindowTitle("trab2FT 0.0.2");
+    setFixedSize(800, 600);
 }
 
 
@@ -99,10 +103,11 @@ void MainWindow::clicou(QAction* a)
     }else if (a == add)
     {
         fila->produz(ADICIONA);
-    }
-    else if (a == sav) {
-        fila->produz(SALVA);
-
+    }else if (a == salvar) {
+        QString filename = QFileDialog::getSaveFileName(this, tr("Save File"),
+                                                         "",
+                                                         tr("Polygon File Format (*.ply )"));
+        centralpanel->recebeArquivoSalvar(filename);
     }
 }
 
