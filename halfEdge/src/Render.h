@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <CommandQueue.h>
 #include <Interface.h>
+#include "PlyWritter.h"
 
 #define INCPOS      100
 #define INCZ        0.5
@@ -92,7 +93,7 @@ private:
         QPen faceExternaBack;
         QPen arestaGrossaBack;
         QPen verticeGrossoBack;
-
+        PlyWritter plyWritter;
         bool adicionaFlag;
 };
 

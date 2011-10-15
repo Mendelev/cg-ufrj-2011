@@ -3,22 +3,22 @@
 
 #include <QObject>
 #include "Interface.h"
+#include <QTextStream>
+#include <QFile>
+#include "Face.h"
+#include "Vertex.h"
 
-
-class PlyWritter : public QObject
+class PlyWritter:QObject
 {
     Q_OBJECT
 
-public slots:
-    void arquivoDestino (const QString &);
-
 public:
-    PlyWritter();
+   QString caminho;
+   PlyWritter();
+   Interface * interface;
+   void setFileName(QString filename);
+   void save();
 
-
-
-private:
-    Interface interface;
 };
 
 #endif // PLYWRITTER_H
