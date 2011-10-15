@@ -28,7 +28,7 @@ enum Commands{
     DELETA,
     VDV,
     ADICIONA,
-    SALVA
+ //   SALVA
 };
 
 typedef struct _ExCom{

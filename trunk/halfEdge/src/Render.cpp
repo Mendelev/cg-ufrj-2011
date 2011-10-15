@@ -933,6 +933,8 @@ void Render::adiciona()
 
 void Render::recebeArquivoSalvar(const QString &filename){
     if (filename != "") {
-        qDebug() << "Salvar arquivo: " << filename;
+       plyWritter.setFileName(filename);
+       plyWritter.interface = &interface;
+       plyWritter.save();
     }
 }
