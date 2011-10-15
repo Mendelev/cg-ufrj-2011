@@ -370,7 +370,6 @@ void Render::click(void)
         f = interface.getFaceNear(p1);
     }
 
-
     if(hsel != NULL)
         t = hsel->getTwin();
 
