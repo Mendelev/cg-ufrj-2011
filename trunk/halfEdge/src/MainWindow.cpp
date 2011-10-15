@@ -5,6 +5,7 @@
 
 MainWindow::MainWindow()
 {
+    //conecta os icones com suas imagem nos resources
     QIcon zi(":zoom-in");
     QIcon zo(":zoom-out");
     QIcon op(":open");
@@ -29,7 +30,8 @@ MainWindow::MainWindow()
     connect(tb, SIGNAL(actionTriggered( QAction * )), this, SLOT(clicou(QAction*)));
     connect(fd, SIGNAL(fileSelected(const QString &)), centralpanel, SLOT(recebeArquivo(const QString &)));
     
-    
+    //atribuições da forma Qaction = Qtoolbar-> addAction (QIcon,Const char *)
+
     open = tb->addAction(op,"");
     tb->addSeparator();
     zoomIn = tb->addAction(zi, "");
@@ -55,6 +57,8 @@ MainWindow::MainWindow()
     setFixedSize(800, 600);
 }
 
+
+//declarado como slot
 void MainWindow::clicou(QAction* a)
 {
     if(a == open)
