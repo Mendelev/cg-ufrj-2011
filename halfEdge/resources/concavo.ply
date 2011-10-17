@@ -1,0 +1,15 @@
+ply
+format ascii 1.0
+obj_info malha 2D
+element vertex 5
+property float x
+property float y
+element face 1
+property list uchar int vertex_indices
+end_header
+0 0
+0 1
+1 1
+0.5 0.5
+1 0
+5 0 1 2 3 4
