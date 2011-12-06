@@ -3,6 +3,8 @@
 
 #include <URGE/URGE.h>
 
+class CPlayer;
+
 USING_URGE;
 
 class CBullet : public Generic
@@ -11,8 +13,10 @@ class CBullet : public Generic
 
         static int BULLET_SPEED;
 
-        CBullet();
+        CBullet(CPlayer* owner);
         virtual ~CBullet();
+
+        inline CPlayer* GetOwner(){return m_owner;};
 
         void act();
         int collide(Object& obj);
@@ -23,6 +27,8 @@ class CBullet : public Generic
     protected:
 
     private:
+
+        CPlayer* m_owner;
 
 };
 

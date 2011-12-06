@@ -6,7 +6,7 @@ CAmmoBox::CAmmoBox()
 {
     box();
     createBoundingVolume(Solid::BOX);
-    this->scale(5);
+    this->scale(3);
     this->activeBody();
 
     type() = CGameDirector::K_DROP;

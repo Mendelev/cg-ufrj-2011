@@ -46,6 +46,8 @@
 		<Unit filename="src\CBullet.h" />
 		<Unit filename="src\CEnemy.cpp" />
 		<Unit filename="src\CEnemy.h" />
+		<Unit filename="src\CEnemySpawner.cpp" />
+		<Unit filename="src\CEnemySpawner.h" />
 		<Unit filename="src\CGameDirector.cpp" />
 		<Unit filename="src\CGameDirector.h" />
 		<Unit filename="src\CPlayer.cpp" />
