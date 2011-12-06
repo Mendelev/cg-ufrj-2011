@@ -28,7 +28,7 @@ CPlayer::CPlayer(CGameDirector* gd , double x , double y , double z):Camera(Came
     this->rotationSpeed() = ROTATION_SPEED;
     this->activeBody();
     this->body->scale(5);
-    this->body->gravityScale() = 0.8;
+    this->body->gravityScale() = 1.2;
 
     m_life = MAX_LIFE;
     m_ammo = START_AMMO;
@@ -43,9 +43,9 @@ CPlayer::~CPlayer()
 
 void CPlayer::CreateBullets()
 {
-    for (int i = 0; i < 1; ++i)
+    for (int i = 0; i < 10; ++i)
     {
-        CBullet* bullet = new CBullet();
+        CBullet* bullet = new CBullet(this);
         m_loadedBullets->push_back(bullet);
     }
 }
@@ -54,19 +54,36 @@ void CPlayer::CreateBullets()
 
 void CPlayer::act()
 {
+    if (behavior() == 2) return;
+
+    if (m_life <= 0)
+    {
+        Die();
+    }
+
     if(Input::Keyboard::hit(KEYBOARD_SPACE))
     {
         Jump();
     }
+
+    /*if (Input::Keyboard::check(KEYBOARD_A))
+    {
+        body->vel -= this->frustum->right * linearSpeed()/2;
+    }
+
+    if (Input::Keyboard::check(KEYBOARD_D))
+    {
+        body->vel += this->frustum->right * linearSpeed()/2;
+    }*/
 
     if (Mouse::hit(MOUSE_LEFT))
     {
         Shoot();
     }
 
-    std::cout << "Loaded " << m_loadedBullets->size() << " / " << m_flyingBullets->size() << std::endl;
+    //std::cout << "Loaded " << m_loadedBullets->size() << " / " << m_flyingBullets->size() << std::endl;
 
-    //ClearBullets();
+    ClearBullets();
 }
 
 int CPlayer::collide(Object& obj)
@@ -77,7 +94,7 @@ int CPlayer::collide(Object& obj)
     }
     else if (obj.type() == CGameDirector::K_DROP)
     {
-        ChangeAmmo(1);
+        ChangeAmmo(3);
         m_gameDirector->AmmoPicked();
         obj.inactiveBody();
     }
@@ -100,27 +117,27 @@ void CPlayer::Shoot()
 {
     if (HasAmmo())
     {
-        Text::write(400,300,"TIRO:  X:%d,  Y:%d",Mouse::x(),Mouse::y());
-
         CBullet* bullet = GetBullet();
 
         if (bullet != NULL)
         {
-            std::cout << " Passei  2"  << std::endl;
-
             bullet->Fly(position() , Mouse::ray());
             ChangeAmmo(-1);
-
-            std::cout << " Passei 3"  << std::endl;
         }
     }
+}
+
+void CPlayer::Die()
+{
+    m_gameDirector->PlayerDied();
+    inactiveBody();
 }
 
 void CPlayer::ClearBullets()
 {
     for (std::vector<CBullet*>::iterator it = m_flyingBullets->begin() ; it < m_flyingBullets->end(); it++ )
     {
-        if (((*it)->position() - position()).length() > 10)
+        if (((*it)->position() - position()).length() > CGameDirector::K_FLOOR_SIZE_Z)
         {
             CBullet* bullet = (*it);
             m_flyingBullets->erase(it);
@@ -152,9 +169,26 @@ void CPlayer::ChangeAmmo(int ammount)
     m_ammo = min(m_ammo , MAX_AMMO);
 }
 
-void CPlayer::TakeDamage(int ammount)
+void CPlayer::ChangeLife(int ammount)
 {
     m_life += ammount;
     m_life = max(m_life , 0);
     m_life = min(m_life , MAX_LIFE);
+}
+
+void CPlayer::Reload(CBullet* bullet)
+{
+    std::vector<CBullet*>::iterator it;
+
+    for (it = m_flyingBullets->begin(); it != m_flyingBullets->end(); ++it)
+    {
+        if ((*it) == bullet)
+        {
+            CBullet* bullet = (*it);
+            m_flyingBullets->erase(it);
+
+            m_loadedBullets->push_back(bullet);
+            break;
+        }
+    }
 }

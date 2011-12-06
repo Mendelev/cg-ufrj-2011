@@ -4,16 +4,22 @@ unsigned int CGameDirector::K_FLOOR = 0;
 unsigned int CGameDirector::K_PLAYER = 1;
 unsigned int CGameDirector::K_DROP = 2;
 unsigned int CGameDirector::K_ENEMY = 3;
+unsigned int CGameDirector::K_BULLET = 4;
 
 int CGameDirector::K_FLOOR_SIZE_X = 100;
 int CGameDirector::K_FLOOR_SIZE_Z = 250;
 
-int CGameDirector::MAX_ENEMIES = 1;
+int CGameDirector::MAX_ENEMIES = 3;
 int CGameDirector::MAX_AMMO = 1;
 
-CGameDirector::CGameDirector():m_player(this , 0 , 20 , -100) , m_floor() , m_sky() , m_light() , m_scene(1000) , m_ammoSpawners()
+int CGameDirector::WINDOWN_X = 800;
+int CGameDirector::WINDOWN_Y = 600;
+
+CGameDirector::CGameDirector():m_player(this , 0 , 20 , -100) , m_floor() , m_sky() , m_light() , m_scene(1000) , m_ammoSpawners() , m_enemySpawners()
 {
     srand(time(NULL));
+
+    m_endGame = false;
 }
 
 CGameDirector::~CGameDirector()
@@ -43,7 +49,11 @@ void CGameDirector::InitializeLevel()
     m_actualAmmoCount = 0;
 
     m_ammoSpawners.push_back(new CAmmoSpawner(40 , 20 , -110));
-    //m_ammoSpawners.push_back(new CAmmoSpawner(-40 , 20 ,-110));
+    m_ammoSpawners.push_back(new CAmmoSpawner(-40 , 20 ,-110));
+
+    m_enemySpawners.push_back(new CEnemySpawner(this , 0 , 20 , 110 , 0 , 10 , -50));
+    m_enemySpawners.push_back(new CEnemySpawner(this , 25 , 20 ,110 , 25 , 10 , -50));
+    m_enemySpawners.push_back(new CEnemySpawner(this , -25 , 20 , 110, -25 , 10 , -50));
 
     m_scene.insert(&m_player);
     m_scene.insert(&m_light);
@@ -62,9 +72,14 @@ void CGameDirector::InitializeLevel()
 
 void CGameDirector::Update()
 {
-    SpawnAmmo();
+    if (!m_endGame)
+    {
+        Mouse::render();
+    }
 
-    //SpawnEnemy();
+    SpawnAmmo();
+    SpawnEnemy();
+
     UI();
 
     m_scene.update();
@@ -72,9 +87,11 @@ void CGameDirector::Update()
 
 void CGameDirector::SpawnEnemy()
 {
+    if (m_enemySpawners.size() <= 0) return;
+
     if (m_actualEnemyCount < MAX_ENEMIES)
     {
-      //  m_scene->insert(new CEnemy(20 , 20 , 20));
+        m_enemySpawners[RandomRange(0 , m_enemySpawners.size() - 1)]->Activate(&m_scene);
 
         m_actualEnemyCount++;
     }
@@ -94,18 +111,42 @@ void CGameDirector::SpawnAmmo()
 
 void CGameDirector::UI()
 {
-    Text::write(10 , 10 , "Life : %d/%d" , m_player.GetLife() , m_player.GetMaxLife());
-    Text::write(10 , 30 , "Ammo : %d/%d" , m_player.GetAmmo() , m_player.GetMaxAmmo());
+    if (!m_endGame)
+    {
+        Text::write(10 , 10 , "Life : %d/%d" , m_player.GetLife() , m_player.GetMaxLife());
+        Text::write(10 , 30 , "Ammo : %d/%d" , m_player.GetAmmo() , m_player.GetMaxAmmo());
+    }
+    else
+    {
+        Text::write(WINDOWN_X/2 - 50 , WINDOWN_Y/2 , "You Got Screwed!!");
+    }
 }
 
 int CGameDirector::RandomRange(int minVal , int maxVal)
 {
-    return minVal + rand() * (maxVal - minVal);
+    return minVal + Round(((rand() % 100)/100.0) * (maxVal - minVal));
 }
 
 double CGameDirector::RandomRange(double minVal , double maxVal)
 {
-    return minVal + rand() * (maxVal - minVal);
+    return minVal + ((rand() % 100)/100.0) * (maxVal - minVal);
 }
 
+int CGameDirector::Round(double val)
+{
+    double floatPart = val - floor(val);
+
+    if ( floatPart >= 0.5 ) return (int)ceil(val);
+    return (int)floor(val);
+}
+
+void CGameDirector::EnemyDied()
+{
+    m_actualEnemyCount--;
+}
+
+void CGameDirector::PlayerDied()
+{
+    m_endGame = true;
+}
 

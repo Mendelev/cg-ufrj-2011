@@ -12,7 +12,7 @@ void InitializeLevel(Scenario* scene)
 URGE_BEGIN
 {
     //new window:RX, RY, FPS, PARAMS,  WINDOW TITTLE,      RENDER QUALITY LEVEL
-    gimme_window(800,600,60, WINDOWED, "URGE Application", NO_SHADER | RENDER_QUALITY_AVERAGE);
+    gimme_window(CGameDirector::WINDOWN_X , CGameDirector::WINDOWN_Y,60, WINDOWED, "URGE Application", NO_SHADER | RENDER_QUALITY_AVERAGE);
 
     CGameDirector gameDirector;
     gameDirector.InitializeLevel();
@@ -20,8 +20,6 @@ URGE_BEGIN
     do
     {
         if (Keyboard::hit(KEYBOARD_ESC))  break;
-
-        Mouse::render();
 
         gameDirector.Update();
 

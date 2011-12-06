@@ -2,14 +2,19 @@
 
 #include "CGameDirector.h"
 
-int CBullet::BULLET_SPEED = 30;
+int CBullet::BULLET_SPEED = 400;
 
-CBullet::CBullet()
+CBullet::CBullet(CPlayer* owner)
 {
-    sphere();
-    createBoundingVolume(Solid::SPHERE);
-    this->scale(2);
+    box();
+    createBoundingVolume(Solid::BOX);
+    this->scale(1.5);
     this->inactiveBody();
+    this->body->gravityScale() = 0.000001;
+
+    type() = CGameDirector::K_BULLET;
+
+    m_owner = owner;
 }
 
 CBullet::~CBullet()
@@ -19,15 +24,16 @@ CBullet::~CBullet()
 
 void CBullet::act()
 {
-    std::cout << behavior() << std::endl;
+    //std::cout << behavior() << std::endl;
 }
 
 int CBullet::collide(Object& obj)
 {
-    std::cout << "Colidiu foda" << std::endl;
-
-    if (obj.type() == CGameDirector::K_PLAYER)
+    if (obj.type() == CGameDirector::K_ENEMY)
     {
+        ((CEnemy&)obj).ChangeLife(-100);
+        m_owner->Reload(this);
+        Stop();
         return 0;
     }
 

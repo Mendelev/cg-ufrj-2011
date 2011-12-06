@@ -29,7 +29,9 @@ class CPlayer : public Camera
         inline std::vector<CBullet*>* CPlayer::GetAllBullets(){return m_loadedBullets;};
 
         void ChangeAmmo(int ammount);
-        void TakeDamage(int ammount);
+        void ChangeLife(int ammount);
+
+        void Reload(CBullet* bullet);
 
     protected:
 
@@ -42,6 +44,7 @@ class CPlayer : public Camera
         static int START_AMMO;
         static int MAX_AMMO;
 
+        void Die();
         void Jump();
         void Shoot();
 
