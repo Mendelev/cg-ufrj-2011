@@ -1,14 +1,17 @@
 #include "CEnemy.h"
-
+USING_URGE;
 #include "CGameDirector.h"
 
-double CEnemy::MOVE_SPEED = 20;
+double CEnemy::MOVE_SPEED = 10;
 int CEnemy::MAX_LIFE = 100;
 int CEnemy::DAMAGE = 20;
 
 CEnemy::CEnemy(CGameDirector* gd ,Array startPosition , Array endPosition)
 {
     this->box();
+
+    //this->setRefractiveIndex(gd->RandomRange(0,1));
+    this->setReflectivity(1);
 
     this->createBoundingVolume(Solid::BOX);
     this->activeBody();

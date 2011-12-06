@@ -6,6 +6,7 @@ class CGameDirector;
 #include <URGE/URGE.h>
 #include <cmath>
 #include "CBullet.h"
+#include <URGE/Environment/light.h>
 
 USING_URGE;
 
@@ -47,6 +48,7 @@ class CPlayer : public Camera
         void Die();
         void Jump();
         void Shoot();
+        void TurnOnLight();
 
         void CreateBullets();
         void ClearBullets();
@@ -56,6 +58,7 @@ class CPlayer : public Camera
         int m_life;
         int m_ammo;
         bool m_isJumping;
+        Light lanterna;
 
         CGameDirector *m_gameDirector;
 

@@ -80,6 +80,10 @@ void CPlayer::act()
     {
         Shoot();
     }
+    if (Mouse::hit(MOUSE_RIGHT))
+    {
+        TurnOnLight();
+    }
 
     //std::cout << "Loaded " << m_loadedBullets->size() << " / " << m_flyingBullets->size() << std::endl;
 
@@ -191,4 +195,10 @@ void CPlayer::Reload(CBullet* bullet)
             break;
         }
     }
+}
+void CPlayer::TurnOnLight(){
+    this->lanterna.setColor(255,255,255);
+    this->lanterna.spot();
+    this->lanterna.direction(Mouse::ray());
+
 }

@@ -7,7 +7,6 @@
 #include "CPlayer.h"
 
 class CPlayer;
-class CEnemySpawner;
 
 USING_URGE;
 //using namespace std;
