@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="60" topLine="0" />
+	</File>
+	<File name="src\CAmmoBox.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="51" topLine="0" />
+	</File>
+	<File name="src\CAmmoBox.h" open="0" top="0" tabpos="0">
+		<Cursor position="81" topLine="0" />
+	</File>
+	<File name="src\CAmmoSpawner.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="358" topLine="0" />
+	</File>
+	<File name="src\CAmmoSpawner.h" open="0" top="0" tabpos="0">
+		<Cursor position="71" topLine="0" />
+	</File>
+	<File name="src\CBullet.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="671" topLine="0" />
+	</File>
+	<File name="src\CBullet.h" open="1" top="0" tabpos="8">
+		<Cursor position="247" topLine="0" />
+	</File>
+	<File name="src\CEnemy.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="140" topLine="0" />
+	</File>
+	<File name="src\CEnemy.h" open="1" top="0" tabpos="6">
+		<Cursor position="88" topLine="0" />
+	</File>
+	<File name="src\CGameDirector.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="1594" topLine="42" />
+	</File>
+	<File name="src\CGameDirector.h" open="1" top="0" tabpos="4">
+		<Cursor position="991" topLine="9" />
+	</File>
+	<File name="src\CPlayer.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="1383" topLine="90" />
+	</File>
+	<File name="src\CPlayer.h" open="1" top="0" tabpos="2">
+		<Cursor position="343" topLine="29" />
+	</File>
+</CodeBlocks_layout_file>
