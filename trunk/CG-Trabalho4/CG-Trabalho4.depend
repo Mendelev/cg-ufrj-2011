@@ -104,3 +104,61 @@
 1323149918 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cenemyspawner.cpp
 	"CEnemySpawner.h"
 
+1323205797 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cammobox.cpp
+	"CAmmoBox.h"
+	"CGameDirector.h"
+
+1323205797 c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cammobox.h
+	<URGE/URGE.h>
+
+1323210565 c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cgamedirector.h
+	"CEnemy.h"
+	"CAmmoSpawner.h"
+	"CEnemySpawner.h"
+	"CPlayer.h"
+
+1323208502 c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cenemy.h
+	<URGE/URGE.h>
+
+1323205797 c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cammospawner.h
+	"CAmmoBox.h"
+
+1323209215 c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cenemyspawner.h
+	"CEnemy.h"
+	<URGE/URGE.h>
+
+1323211470 c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cplayer.h
+	<URGE/URGE.h>
+	<cmath>
+	"CBullet.h"
+	<URGE/Environment/light.h>
+
+1323205797 c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cbullet.h
+	<URGE/URGE.h>
+
+1323205797 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cammospawner.cpp
+	"CAmmoSpawner.h"
+
+1323205797 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cbullet.cpp
+	"CBullet.h"
+	"CGameDirector.h"
+
+1323210719 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cenemy.cpp
+	"CEnemy.h"
+	"CGameDirector.h"
+
+1323209271 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cenemyspawner.cpp
+	"CEnemySpawner.h"
+
+1323210535 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cgamedirector.cpp
+	"CGameDirector.h"
+
+1323211077 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cplayer.cpp
+	"CPlayer.h"
+	"CGameDirector.h"
+
+1323205797 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\main.cpp
+	<URGE/URGE.h>
+	<stdio.h>
+	"src\CGameDirector.h"
+

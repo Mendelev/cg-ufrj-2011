@@ -53,7 +53,9 @@
 		<Unit filename="src\CPlayer.cpp" />
 		<Unit filename="src\CPlayer.h" />
 		<Extensions>
-			<code_completion />
+			<code_completion>
+				<search_path add="..\..\..\MinGW\include" />
+			</code_completion>
 			<debugger />
 		</Extensions>
 	</Project>
