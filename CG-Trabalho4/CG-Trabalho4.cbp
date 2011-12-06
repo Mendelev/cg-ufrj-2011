@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CG-Trabalho4" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\CG-Trabalho4" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\CG-Trabalho4" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add library="URGE" />
+			<Add library="URGEext" />
+		</Linker>
+		<Unit filename="main.cpp" />
+		<Unit filename="shader_bin\ocean.shd" />
+		<Unit filename="shader_bin\std.shd" />
+		<Unit filename="src\CAmmoBox.cpp" />
+		<Unit filename="src\CAmmoBox.h" />
+		<Unit filename="src\CAmmoSpawner.cpp" />
+		<Unit filename="src\CAmmoSpawner.h" />
+		<Unit filename="src\CBullet.cpp" />
+		<Unit filename="src\CBullet.h" />
+		<Unit filename="src\CEnemy.cpp" />
+		<Unit filename="src\CEnemy.h" />
+		<Unit filename="src\CGameDirector.cpp" />
+		<Unit filename="src\CGameDirector.h" />
+		<Unit filename="src\CPlayer.cpp" />
+		<Unit filename="src\CPlayer.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
