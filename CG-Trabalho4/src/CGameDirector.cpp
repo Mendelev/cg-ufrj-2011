@@ -50,10 +50,8 @@ void CGameDirector::InitializeLevel()
 
     m_ammoSpawners.push_back(new CAmmoSpawner(40 , 20 , -110));
     m_ammoSpawners.push_back(new CAmmoSpawner(-40 , 20 ,-110));
-    m_ammoSpawners.push_back(new CAmmoSpawner(40 , -20 ,-110));
-    m_ammoSpawners.push_back(new CAmmoSpawner(-40 , -20 ,-110));
-
-
+     m_ammoSpawners.push_back(new CAmmoSpawner(40 , 20 , 110));
+    m_ammoSpawners.push_back(new CAmmoSpawner(-40 , 20 ,110));
 
     m_enemySpawners.push_back(new CEnemySpawner(this , 0 , 20 , 110 , 0 , 10 , -50));
     m_enemySpawners.push_back(new CEnemySpawner(this , 25 , 20 ,110 , 25 , 10 , -50));
