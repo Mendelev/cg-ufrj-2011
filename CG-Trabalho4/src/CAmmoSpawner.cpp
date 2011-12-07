@@ -2,7 +2,7 @@
 
 CAmmoSpawner::CAmmoSpawner(double x , double y , double z):m_position(x , y , z , 1)
 {
-    //ctor
+
 }
 
 CAmmoSpawner::~CAmmoSpawner()
