@@ -72,8 +72,6 @@ void CGameDirector::InitializeLevel()
         m_scene.insert(bullets->at(i));
     }
 
-    m_scene.insert(m_player.GetLanterna());
-
     m_scene.prepare();
 }
 
@@ -89,17 +87,14 @@ void CGameDirector::Update()
     AtualizaTempo();
     AtualizaLuz();
 
-
-
     UI();
 
     m_scene.update();
 }
 void CGameDirector::AtualizaLuz(){
     m_light.direction(sin(t),cos(t),0);
-
-
 }
+
 void CGameDirector::AtualizaTempo(){
     t+=0.01;
 }
