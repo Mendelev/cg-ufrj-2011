@@ -3,9 +3,9 @@
 
 #include <URGE/URGE.h>
 
-class CGameDirector;
-
 USING_URGE;
+
+class CGameDirector;
 
 class CEnemy : public Generic
 {
