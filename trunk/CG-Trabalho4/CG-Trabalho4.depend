@@ -55,13 +55,13 @@
 1323133731 c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cammobox.h
 	<URGE/URGE.h>
 
-1323229572 c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cgamedirector.h
+1323230231 c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cgamedirector.h
 	"CEnemy.h"
 	"CAmmoSpawner.h"
 	"CEnemySpawner.h"
 	"CPlayer.h"
 
-1323228211 c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cenemy.h
+1323231052 c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cenemy.h
 	<URGE/URGE.h>
 
 1323125199 c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cammospawner.h
@@ -83,27 +83,27 @@
 	"CBullet.h"
 	"CGameDirector.h"
 
-1323230022 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cenemy.cpp
+1323231060 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cenemy.cpp
 	"CEnemy.h"
 	"CGameDirector.h"
 
-1323229952 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cgamedirector.cpp
+1323231113 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cgamedirector.cpp
 	"CGameDirector.h"
 
-1323229573 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\main.cpp
+1323230256 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\main.cpp
 	<URGE/URGE.h>
 	<stdio.h>
 	"src\CGameDirector.h"
 	<iostream>
 
-1323230028 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cplayer.cpp
+1323230107 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cplayer.cpp
 	"CPlayer.h"
 	"CGameDirector.h"
 
-1323148695 c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cenemyspawner.h
+1323231073 c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cenemyspawner.h
 	"CEnemy.h"
 
-1323149918 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cenemyspawner.cpp
+1323231026 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cenemyspawner.cpp
 	"CEnemySpawner.h"
 
 1323205797 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cammobox.cpp

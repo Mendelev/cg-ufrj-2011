@@ -6,7 +6,7 @@
 class CEnemySpawner
 {
     public:
-        CEnemySpawner(CGameDirector* gd , double startX , double startY , double startZ ,double endX , double endY , double endZ);
+        CEnemySpawner(CGameDirector* gd , double startX , double startY , double startZ);
         virtual ~CEnemySpawner();
 
         void Activate(Scenario* scene);
@@ -14,7 +14,6 @@ class CEnemySpawner
     private:
 
         Array m_position;
-        Array m_destination;
         CGameDirector* m_gameDirector;
 };
 

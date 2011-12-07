@@ -11,10 +11,11 @@ class CEnemy : public Generic
 {
     public:
 
-        CEnemy(CGameDirector* gd , Array startPosition , Array endPosition);
+        CEnemy(CGameDirector* gd , Array startPosition);
         virtual ~CEnemy();
 
         void act();
+        int collide(Object& obj);
         void ChangeLife(int ammount);
 
     protected:
@@ -29,7 +30,6 @@ class CEnemy : public Generic
         void AutoDestroy();
 
         int m_life;
-        Array m_endPosition;
         CGameDirector* m_gameDirector;
 };
 

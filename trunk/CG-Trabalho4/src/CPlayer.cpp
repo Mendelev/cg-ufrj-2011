@@ -210,7 +210,6 @@ void CPlayer::Reload(CBullet* bullet)
 
 void CPlayer::TurnOnLight()
 {
-    std::cout << "Liguei" << std::endl;
     this->lanterna.setIntensity(5);
     this->lanterna.position() = position();
     this->lanterna.direction(Mouse::ray());
@@ -218,7 +217,6 @@ void CPlayer::TurnOnLight()
 
 void CPlayer::TurnOffLight()
 {
-    std::cout << "Desliguei" << std::endl;
     this->lanterna.setIntensity(0);
 }
 
