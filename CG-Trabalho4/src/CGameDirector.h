@@ -30,6 +30,8 @@ class CGameDirector
         static int MAX_ENEMIES;
         static int MAX_AMMO;
 
+
+
         CGameDirector();
         virtual ~CGameDirector();
 
@@ -46,6 +48,8 @@ class CGameDirector
         double RandomRange(double min , double max);
         int Round(double val);
 
+        void AtualizaTempo();
+        void AtualizaLuz();
     protected:
 
     private:
@@ -60,6 +64,7 @@ class CGameDirector
         Sky m_sky;
         Light m_light;
         Scenario m_scene;
+        double t;
 
         std::vector<CAmmoSpawner*> m_ammoSpawners;
         std::vector<CEnemySpawner*> m_enemySpawners;

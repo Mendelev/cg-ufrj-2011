@@ -15,11 +15,13 @@ int CGameDirector::MAX_AMMO = 1;
 int CGameDirector::WINDOWN_X = 800;
 int CGameDirector::WINDOWN_Y = 600;
 
+
 CGameDirector::CGameDirector():m_player(this , 0 , 20 , -100) , m_floor() , m_sky() , m_light() , m_scene(1000) , m_ammoSpawners() , m_enemySpawners()
 {
     srand(time(NULL));
 
     m_endGame = false;
+      t=0;
 }
 
 CGameDirector::~CGameDirector()
@@ -82,12 +84,23 @@ void CGameDirector::Update()
 
     SpawnAmmo();
     SpawnEnemy();
+    AtualizaTempo();
+    AtualizaLuz();
+
+
 
     UI();
 
     m_scene.update();
 }
+void CGameDirector::AtualizaLuz(){
+    m_light.direction(sin(t),cos(t),0);
 
+
+}
+void CGameDirector::AtualizaTempo(){
+    t+=0.01;
+}
 void CGameDirector::SpawnEnemy()
 {
     if (m_enemySpawners.size() <= 0) return;
