@@ -6,17 +6,18 @@ unsigned int CGameDirector::K_DROP = 2;
 unsigned int CGameDirector::K_ENEMY = 3;
 unsigned int CGameDirector::K_BULLET = 4;
 
-int CGameDirector::K_FLOOR_SIZE_X = 100;
-int CGameDirector::K_FLOOR_SIZE_Z = 250;
+int CGameDirector::K_FLOOR_SIZE_X = 150;
+int CGameDirector::K_FLOOR_SIZE_Z = 150;
 
 int CGameDirector::MAX_ENEMIES = 3;
 int CGameDirector::MAX_AMMO = 1;
 
 int CGameDirector::WINDOWN_X = 800;
 int CGameDirector::WINDOWN_Y = 600;
+int CGameDirector::GAME_FPS = 60;
 
 
-CGameDirector::CGameDirector():m_player(this , 0 , 20 , -100) , m_floor() , m_sky() , m_light() , m_scene(1000) , m_ammoSpawners() , m_enemySpawners()
+CGameDirector::CGameDirector():m_player(this , 0 , 20 , 0) , m_floor() , m_sky() , m_light() , m_scene(1000) , m_ammoSpawners() , m_enemySpawners()
 {
     srand(time(NULL));
 
@@ -50,14 +51,15 @@ void CGameDirector::InitializeLevel()
     m_actualEnemyCount = 0;
     m_actualAmmoCount = 0;
 
-    m_ammoSpawners.push_back(new CAmmoSpawner(40 , 20 , -110));
-    m_ammoSpawners.push_back(new CAmmoSpawner(-40 , 20 ,-110));
-     m_ammoSpawners.push_back(new CAmmoSpawner(40 , 20 , 110));
-    m_ammoSpawners.push_back(new CAmmoSpawner(-40 , 20 ,110));
+    m_ammoSpawners.push_back(new CAmmoSpawner(-(K_FLOOR_SIZE_X/2 - 10) , 20 , 0));
+    m_ammoSpawners.push_back(new CAmmoSpawner((K_FLOOR_SIZE_X/2 - 10) , 20 ,0));
+    m_ammoSpawners.push_back(new CAmmoSpawner(0 , 20 , (K_FLOOR_SIZE_Z/2 - 10)));
+    m_ammoSpawners.push_back(new CAmmoSpawner(0 , 20 ,-(K_FLOOR_SIZE_Z/2 - 10)));
 
-    m_enemySpawners.push_back(new CEnemySpawner(this , 0 , 20 , 110 , 0 , 10 , -50));
-    m_enemySpawners.push_back(new CEnemySpawner(this , 25 , 20 ,110 , 25 , 10 , -50));
-    m_enemySpawners.push_back(new CEnemySpawner(this , -25 , 20 , 110, -25 , 10 , -50));
+    m_enemySpawners.push_back(new CEnemySpawner(this , -(K_FLOOR_SIZE_X/2 - 10) , 20 , -(K_FLOOR_SIZE_Z/2 - 10)));
+    m_enemySpawners.push_back(new CEnemySpawner(this , (K_FLOOR_SIZE_X/2 - 10) , 20 , -(K_FLOOR_SIZE_Z/2 - 10)));
+    m_enemySpawners.push_back(new CEnemySpawner(this , -(K_FLOOR_SIZE_X/2 - 10) , 20 , (K_FLOOR_SIZE_Z/2 - 10)));
+    m_enemySpawners.push_back(new CEnemySpawner(this , (K_FLOOR_SIZE_X/2 - 10) , 20 , (K_FLOOR_SIZE_Z/2 - 10)));
 
     m_scene.insert(&m_player);
     m_scene.insert(&m_light);
@@ -96,7 +98,9 @@ void CGameDirector::AtualizaLuz(){
 }
 
 void CGameDirector::AtualizaTempo(){
-    t+=0.01;
+    t += 1;
+
+    //t += 1/CGameDirector::GAME_FPS;
 }
 void CGameDirector::SpawnEnemy()
 {

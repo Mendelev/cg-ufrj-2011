@@ -26,6 +26,7 @@ class CGameDirector
 
         static int WINDOWN_X;
         static int WINDOWN_Y;
+        static int GAME_FPS;
 
         static int MAX_ENEMIES;
         static int MAX_AMMO;
