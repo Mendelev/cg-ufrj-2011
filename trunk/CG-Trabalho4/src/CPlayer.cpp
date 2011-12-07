@@ -3,7 +3,7 @@
 #include "CGameDirector.h"
 
 double CPlayer::JUMP_FORCE = 400;
-double CPlayer::MOVE_SPEED = 30;
+double CPlayer::MOVE_SPEED = 40;
 double CPlayer::ROTATION_SPEED = 3;
 
 int CPlayer::MAX_LIFE = 100;

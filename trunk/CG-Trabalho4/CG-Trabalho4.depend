@@ -83,11 +83,11 @@
 	"CBullet.h"
 	"CGameDirector.h"
 
-1323220984 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cenemy.cpp
+1323230022 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cenemy.cpp
 	"CEnemy.h"
 	"CGameDirector.h"
 
-1323229572 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cgamedirector.cpp
+1323229952 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cgamedirector.cpp
 	"CGameDirector.h"
 
 1323229573 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\main.cpp
@@ -96,7 +96,7 @@
 	"src\CGameDirector.h"
 	<iostream>
 
-1323229705 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cplayer.cpp
+1323230028 source:c:\users\matheus\desktop\cg  trab4\cg-trabalho4\src\cplayer.cpp
 	"CPlayer.h"
 	"CGameDirector.h"
 
