@@ -33,6 +33,9 @@ class CPlayer : public Camera
         void ChangeLife(int ammount);
 
         void Reload(CBullet* bullet);
+        Light* GetLanterna();
+        int getPoints();
+        int changePoints(int);
 
     protected:
 
@@ -55,10 +58,12 @@ class CPlayer : public Camera
 
         CBullet* GetBullet();
 
+
         int m_life;
         int m_ammo;
         bool m_isJumping;
         Light lanterna;
+        int points;
 
         CGameDirector *m_gameDirector;
 

@@ -1,6 +1,7 @@
 #include <URGE/URGE.h>
 #include <stdio.h>
 #include "src\CGameDirector.h"
+#include <iostream>
 
 USING_URGE;
 

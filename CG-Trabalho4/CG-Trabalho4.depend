@@ -127,7 +127,7 @@
 	"CEnemy.h"
 	<URGE/URGE.h>
 
-1323211470 c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cplayer.h
+1323218262 c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cplayer.h
 	<URGE/URGE.h>
 	<cmath>
 	"CBullet.h"
@@ -139,26 +139,27 @@
 1323205797 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cammospawner.cpp
 	"CAmmoSpawner.h"
 
-1323205797 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cbullet.cpp
+1323217984 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cbullet.cpp
 	"CBullet.h"
 	"CGameDirector.h"
 
-1323210719 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cenemy.cpp
+1323221039 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cenemy.cpp
 	"CEnemy.h"
 	"CGameDirector.h"
 
 1323209271 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cenemyspawner.cpp
 	"CEnemySpawner.h"
 
-1323210535 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cgamedirector.cpp
+1323218155 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cgamedirector.cpp
 	"CGameDirector.h"
 
-1323211077 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cplayer.cpp
+1323218458 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\src\cplayer.cpp
 	"CPlayer.h"
 	"CGameDirector.h"
 
-1323205797 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\main.cpp
+1323215675 source:c:\users\thalles\urge\urge_devpack_0_15\projetos\cg-ufrj-2011\cg-trabalho4\main.cpp
 	<URGE/URGE.h>
 	<stdio.h>
 	"src\CGameDirector.h"
+	<iostream>
 

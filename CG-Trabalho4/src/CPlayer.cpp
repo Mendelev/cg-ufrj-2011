@@ -21,7 +21,7 @@ CPlayer::CPlayer(CGameDirector* gd , double x , double y , double z):Camera(Came
     type() = CGameDirector::K_PLAYER;
 
     m_isJumping = false;
-
+    this->points=0;
     controller().disableMouse();
 
     this->linearSpeed() = MOVE_SPEED;
@@ -200,5 +200,17 @@ void CPlayer::TurnOnLight(){
     this->lanterna.setColor(255,255,255);
     this->lanterna.spot();
     this->lanterna.direction(Mouse::ray());
+    this->lanterna.setIntensity(1.0);
 
 }
+Light * CPlayer::GetLanterna(){
+    return &(this->lanterna);
+}
+
+int CPlayer::getPoints(){
+    return this->points;
+}
+int CPlayer::changePoints(int mudanca){
+    this->points+=mudanca;
+    return this->points;
+};

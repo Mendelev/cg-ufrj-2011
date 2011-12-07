@@ -50,6 +50,10 @@ void CGameDirector::InitializeLevel()
 
     m_ammoSpawners.push_back(new CAmmoSpawner(40 , 20 , -110));
     m_ammoSpawners.push_back(new CAmmoSpawner(-40 , 20 ,-110));
+    m_ammoSpawners.push_back(new CAmmoSpawner(40 , -20 ,-110));
+    m_ammoSpawners.push_back(new CAmmoSpawner(-40 , -20 ,-110));
+
+
 
     m_enemySpawners.push_back(new CEnemySpawner(this , 0 , 20 , 110 , 0 , 10 , -50));
     m_enemySpawners.push_back(new CEnemySpawner(this , 25 , 20 ,110 , 25 , 10 , -50));
@@ -59,6 +63,7 @@ void CGameDirector::InitializeLevel()
     m_scene.insert(&m_light);
     m_scene.insert(&m_floor);
     m_scene.insert(&m_sky);
+    m_scene.insert(m_player.GetLanterna());
 
     std::vector<CBullet*>* bullets = m_player.GetAllBullets();
 
@@ -115,6 +120,7 @@ void CGameDirector::UI()
     {
         Text::write(10 , 10 , "Life : %d/%d" , m_player.GetLife() , m_player.GetMaxLife());
         Text::write(10 , 30 , "Ammo : %d/%d" , m_player.GetAmmo() , m_player.GetMaxAmmo());
+        Text::write(10,50,"Points : %d",m_player.getPoints());
     }
     else
     {
