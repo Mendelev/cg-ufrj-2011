@@ -2,7 +2,7 @@
 USING_URGE;
 #include "CGameDirector.h"
 
-double CEnemy::MOVE_SPEED = 25;
+double CEnemy::MOVE_SPEED = 15;
 int CEnemy::MAX_LIFE = 100;
 int CEnemy::DAMAGE = 20;
 
