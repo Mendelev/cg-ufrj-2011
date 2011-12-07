@@ -32,6 +32,7 @@ int CBullet::collide(Object& obj)
     if (obj.type() == CGameDirector::K_ENEMY)
     {
         ((CEnemy&)obj).ChangeLife(-100);
+
         m_owner->Reload(this);
         Stop();
         return 0;
