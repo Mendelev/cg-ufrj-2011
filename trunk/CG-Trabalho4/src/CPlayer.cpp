@@ -10,7 +10,7 @@ int CPlayer::MAX_LIFE = 100;
 int CPlayer::START_AMMO = 5;
 int CPlayer::MAX_AMMO = 10;
 
-CPlayer::CPlayer(CGameDirector* gd , double x , double y , double z):Camera(Camera::FIRST_PERSON)
+CPlayer::CPlayer(CGameDirector* gd , double x , double y , double z):Camera(Camera::FIRST_PERSON) , lanterna()
 {
     m_gameDirector = gd;
 
@@ -29,6 +29,12 @@ CPlayer::CPlayer(CGameDirector* gd , double x , double y , double z):Camera(Came
     this->activeBody();
     this->body->scale(5);
     this->body->gravityScale() = 1.2;
+
+    this->lanterna.setColor(255,255,255);
+    this->lanterna.spot();
+    this->lanterna.setIntensity(0);
+    this->lanterna.setSpotAngle(20);
+    this->lanterna.setSpotAttenuation(120);
 
     m_life = MAX_LIFE;
     m_ammo = START_AMMO;
@@ -80,9 +86,14 @@ void CPlayer::act()
     {
         Shoot();
     }
-    if (Mouse::hit(MOUSE_RIGHT))
+
+    if (Mouse::check(MOUSE_RIGHT))
     {
         TurnOnLight();
+    }
+    else
+    {
+        TurnOffLight();
     }
 
     //std::cout << "Loaded " << m_loadedBullets->size() << " / " << m_flyingBullets->size() << std::endl;
@@ -196,15 +207,24 @@ void CPlayer::Reload(CBullet* bullet)
         }
     }
 }
-void CPlayer::TurnOnLight(){
-    this->lanterna.setColor(255,255,255);
-    this->lanterna.spot();
-    this->lanterna.direction(Mouse::ray());
-    this->lanterna.setIntensity(1.0);
 
+void CPlayer::TurnOnLight()
+{
+    std::cout << "Liguei" << std::endl;
+    this->lanterna.setIntensity(5);
+    this->lanterna.position() = position();
+    this->lanterna.direction(Mouse::ray());
 }
-Light * CPlayer::GetLanterna(){
-    return &(this->lanterna);
+
+void CPlayer::TurnOffLight()
+{
+    std::cout << "Desliguei" << std::endl;
+    this->lanterna.setIntensity(0);
+}
+
+Light* CPlayer::GetLanterna()
+{
+    return &lanterna;
 }
 
 int CPlayer::getPoints(){
@@ -214,3 +234,4 @@ int CPlayer::changePoints(int mudanca){
     this->points+=mudanca;
     return this->points;
 };
+

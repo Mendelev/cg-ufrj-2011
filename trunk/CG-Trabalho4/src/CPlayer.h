@@ -25,6 +25,8 @@ class CPlayer : public Camera
         inline int GetMaxLife(){return MAX_LIFE;};
         inline int GetAmmo(){return m_ammo;};
         inline int GetMaxAmmo(){return MAX_AMMO;};
+        Light* GetLanterna();
+
         inline bool HasAmmo(){return m_ammo > 0;};
 
         inline std::vector<CBullet*>* CPlayer::GetAllBullets(){return m_loadedBullets;};
@@ -33,7 +35,6 @@ class CPlayer : public Camera
         void ChangeLife(int ammount);
 
         void Reload(CBullet* bullet);
-        Light* GetLanterna();
         int getPoints();
         int changePoints(int);
 
@@ -52,6 +53,7 @@ class CPlayer : public Camera
         void Jump();
         void Shoot();
         void TurnOnLight();
+        void TurnOffLight();
 
         void CreateBullets();
         void ClearBullets();

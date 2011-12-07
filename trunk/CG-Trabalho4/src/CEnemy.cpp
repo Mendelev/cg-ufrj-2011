@@ -49,7 +49,7 @@ void CEnemy::act()
         m_gameDirector->GetPlayer()->changePoints(+1);
     }
 
-    if (  position().dist(m_gameDirector->GetPlayer()->position()) < 10)
+    if (position().dist(m_gameDirector->GetPlayer()->position()) < 10)
     {
         AutoDestroy();
     }

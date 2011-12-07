@@ -72,6 +72,8 @@ void CGameDirector::InitializeLevel()
         m_scene.insert(bullets->at(i));
     }
 
+    m_scene.insert(m_player.GetLanterna());
+
     m_scene.prepare();
 }
 
