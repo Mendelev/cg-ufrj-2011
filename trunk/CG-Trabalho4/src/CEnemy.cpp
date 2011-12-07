@@ -16,6 +16,7 @@ CEnemy::CEnemy(CGameDirector* gd ,Array startPosition)
     this->createBoundingVolume(Solid::BOX);
     this->activeBody();
 
+    this->body->scale(4);
     this->scale(4);
 
     this->setColor(80 , 20 , 20);
@@ -66,6 +67,7 @@ void CEnemy::AutoDestroy()
 
 void CEnemy::Die()
 {
+    m_gameDirector->m_enemyHitSound.play();
     m_gameDirector->EnemyDied();
     inactiveBody();
 }

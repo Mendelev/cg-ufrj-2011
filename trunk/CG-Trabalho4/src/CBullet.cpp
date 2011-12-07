@@ -9,6 +9,7 @@ CBullet::CBullet(CPlayer* owner)
     box();
     createBoundingVolume(Solid::BOX);
     this->scale(1.5);
+    this->body->scale(1.5);
     this->inactiveBody();
     this->body->gravityScale() = 0.000001;
 
@@ -36,6 +37,11 @@ int CBullet::collide(Object& obj)
         m_owner->Reload(this);
         Stop();
         return 0;
+    }
+    else if (obj.type() == CGameDirector::K_WALL)
+    {
+        m_owner->Reload(this);
+        Stop();
     }
 
     return Object::collide(obj);

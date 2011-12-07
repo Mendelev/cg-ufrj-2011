@@ -60,7 +60,6 @@ class CPlayer : public Camera
 
         CBullet* GetBullet();
 
-
         int m_life;
         int m_ammo;
         bool m_isJumping;

@@ -13,7 +13,7 @@ void InitializeLevel(Scenario* scene)
 URGE_BEGIN
 {
     //new window:RX, RY, FPS, PARAMS,  WINDOW TITTLE,      RENDER QUALITY LEVEL
-    gimme_window(CGameDirector::WINDOWN_X , CGameDirector::WINDOWN_Y, CGameDirector::GAME_FPS , WINDOWED, "URGE Application", NO_SHADER | RENDER_QUALITY_AVERAGE);
+    gimme_window(CGameDirector::WINDOWN_X , CGameDirector::WINDOWN_Y, CGameDirector::GAME_FPS , WINDOWED, "URGE Application", RENDER_QUALITY_HIGH);
 
     CGameDirector gameDirector;
     gameDirector.InitializeLevel();

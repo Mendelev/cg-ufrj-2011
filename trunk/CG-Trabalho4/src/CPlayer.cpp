@@ -109,7 +109,7 @@ int CPlayer::collide(Object& obj)
     }
     else if (obj.type() == CGameDirector::K_DROP)
     {
-        ChangeAmmo(3);
+        ChangeAmmo(5);
         m_gameDirector->AmmoPicked();
         obj.inactiveBody();
     }
@@ -138,6 +138,7 @@ void CPlayer::Shoot()
         {
             bullet->Fly(position() , Mouse::ray());
             ChangeAmmo(-1);
+            m_gameDirector->m_onShootSound.play();
         }
     }
 }
@@ -228,7 +229,9 @@ Light* CPlayer::GetLanterna()
 int CPlayer::getPoints(){
     return this->points;
 }
-int CPlayer::changePoints(int mudanca){
+
+int CPlayer::changePoints(int mudanca)
+{
     this->points+=mudanca;
     return this->points;
 };
