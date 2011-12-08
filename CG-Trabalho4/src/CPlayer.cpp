@@ -2,9 +2,9 @@
 
 #include "CGameDirector.h"
 
-double CPlayer::JUMP_FORCE = 400;
+double CPlayer::JUMP_FORCE = 800;
 double CPlayer::MOVE_SPEED = 40;
-double CPlayer::ROTATION_SPEED = 3;
+double CPlayer::ROTATION_SPEED = 0;
 
 int CPlayer::MAX_LIFE = 100;
 int CPlayer::START_AMMO = 5;
@@ -20,9 +20,16 @@ CPlayer::CPlayer(CGameDirector* gd , double x , double y , double z):Camera(Came
     position(x , y , z);
     type() = CGameDirector::K_PLAYER;
 
+    m_flashLight = false;
+    tempoLanterna = -9999;
+
     m_isJumping = false;
-    this->points=0;
-    controller().disableMouse();
+    this->points = 0;
+
+    //controller().disableMouse();
+
+    controller().setHumanView(45);
+    //controller().blockMouse();
 
     this->linearSpeed() = MOVE_SPEED;
     this->rotationSpeed() = ROTATION_SPEED;
@@ -38,6 +45,8 @@ CPlayer::CPlayer(CGameDirector* gd , double x , double y , double z):Camera(Came
 
     m_life = MAX_LIFE;
     m_ammo = START_AMMO;
+
+    setFarView(400);
 
     CreateBullets();
 }
@@ -72,7 +81,7 @@ void CPlayer::act()
         Jump();
     }
 
-    /*if (Input::Keyboard::check(KEYBOARD_A))
+    if (Input::Keyboard::check(KEYBOARD_A))
     {
         body->vel -= this->frustum->right * linearSpeed()/2;
     }
@@ -80,20 +89,22 @@ void CPlayer::act()
     if (Input::Keyboard::check(KEYBOARD_D))
     {
         body->vel += this->frustum->right * linearSpeed()/2;
-    }*/
+    }
 
     if (Mouse::hit(MOUSE_LEFT))
     {
         Shoot();
     }
 
+    if (m_flashLight) atualizaLanterna();
+
     if (Mouse::check(MOUSE_RIGHT))
     {
-        TurnOnLight();
+        if (!m_flashLight)TurnOnLight();
     }
     else
     {
-        TurnOffLight();
+        if (m_flashLight)TurnOffLight();
     }
 
     //std::cout << "Loaded " << m_loadedBullets->size() << " / " << m_flyingBullets->size() << std::endl;
@@ -187,6 +198,9 @@ void CPlayer::ChangeAmmo(int ammount)
 
 void CPlayer::ChangeLife(int ammount)
 {
+    if (ammount < 0)
+        m_gameDirector->m_onLoseLifeSound.play();
+
     m_life += ammount;
     m_life = max(m_life , 0);
     m_life = min(m_life , MAX_LIFE);
@@ -211,14 +225,18 @@ void CPlayer::Reload(CBullet* bullet)
 
 void CPlayer::TurnOnLight()
 {
+    if (m_gameDirector->t - tempoLanterna < 1.5) return;
+
     this->lanterna.setIntensity(5);
-    this->lanterna.position() = position();
-    this->lanterna.direction(Mouse::ray());
+    tempoLanterna = m_gameDirector->t;
+    m_flashLight = true;
 }
 
 void CPlayer::TurnOffLight()
 {
     this->lanterna.setIntensity(0);
+    tempoLanterna = m_gameDirector->t;
+    m_flashLight = false;
 }
 
 Light* CPlayer::GetLanterna()
@@ -226,7 +244,8 @@ Light* CPlayer::GetLanterna()
     return &lanterna;
 }
 
-int CPlayer::getPoints(){
+int CPlayer::getPoints()
+{
     return this->points;
 }
 
@@ -235,4 +254,11 @@ int CPlayer::changePoints(int mudanca)
     this->points+=mudanca;
     return this->points;
 };
+
+void CPlayer::atualizaLanterna()
+{
+    this->lanterna.setIntensity(5 - (m_gameDirector->t - tempoLanterna) * 0.5);
+    this->lanterna.position() = position();
+    this->lanterna.direction(Mouse::ray());
+}
 

@@ -37,6 +37,7 @@ class CPlayer : public Camera
         void Reload(CBullet* bullet);
         int getPoints();
         int changePoints(int);
+        float tempoLanterna;
 
     protected:
 
@@ -49,6 +50,7 @@ class CPlayer : public Camera
         static int START_AMMO;
         static int MAX_AMMO;
 
+        void atualizaLanterna();
         void Die();
         void Jump();
         void Shoot();
@@ -65,6 +67,8 @@ class CPlayer : public Camera
         bool m_isJumping;
         Light lanterna;
         int points;
+
+        bool m_flashLight;
 
         CGameDirector *m_gameDirector;
 

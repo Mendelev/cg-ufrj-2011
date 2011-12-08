@@ -8,18 +8,27 @@ int CEnemy::DAMAGE = 20;
 
 CEnemy::CEnemy(CGameDirector* gd ,Array startPosition)
 {
-    this->box();
+    //this->box();
 
     //this->setRefractiveIndex(gd->RandomRange(0,1));
-    this->setReflectivity(1);
+    //this->setReflectivity(1);
+
+    this->load("data/enemy.md2");
+
+    //Texture t;
+    //t.load("data/enemy.png");
+
+    //this->setTexture(t);
 
     this->createBoundingVolume(Solid::BOX);
     this->activeBody();
 
-    this->body->scale(4);
-    this->scale(4);
-
     this->setColor(80 , 20 , 20);
+
+    this->graphic->normalize(0,-2,0);
+
+    this->scale(4);
+    this->body->scale(4);
 
     position(startPosition);
 
@@ -50,6 +59,10 @@ void CEnemy::act()
 {
     this->body->vel = (m_gameDirector->GetPlayer()->position()-this->position()).getNormalized() * MOVE_SPEED;
     if (behavior() == 2) return;
+
+    GLfloat angulo = this->position().angle(m_gameDirector->GetPlayer()->position() - position());
+    this->body->rot.set(-angulo, 0, 1, 0);
+
 
     if (m_life <= 0)
     {
