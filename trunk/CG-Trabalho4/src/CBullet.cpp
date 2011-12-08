@@ -2,10 +2,14 @@
 
 #include "CGameDirector.h"
 
-int CBullet::BULLET_SPEED = 400;
+int CBullet::BULLET_SPEED = 200;
 
-CBullet::CBullet(CPlayer* owner)
+CBullet::CBullet(CPlayer* owner) : m_particle()
 {
+    m_particle.generate(Particle::GLOW);
+    m_particle.setColor(255,200,60);
+    m_particle.stop();
+
     box();
     createBoundingVolume(Solid::BOX);
     this->scale(1.5);
@@ -25,7 +29,7 @@ CBullet::~CBullet()
 
 void CBullet::act()
 {
-    //std::cout << behavior() << std::endl;
+    m_particle.position() = position();
 }
 
 int CBullet::collide(Object& obj)
@@ -49,6 +53,7 @@ int CBullet::collide(Object& obj)
 
 void CBullet::Fly(Array p_position , Array direction)
 {
+    m_particle.start();
     this->activeBody();
     position() = p_position + direction * 10;
     this->body->vel = direction * BULLET_SPEED;
@@ -57,4 +62,5 @@ void CBullet::Fly(Array p_position , Array direction)
 void CBullet::Stop()
 {
     this->inactiveBody();
+    m_particle.stop();
 }

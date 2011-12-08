@@ -17,6 +17,8 @@ class CBullet : public Generic
         virtual ~CBullet();
 
         inline CPlayer* GetOwner(){return m_owner;};
+        inline ParticleEmitter* GetParticle(){return &m_particle;};
+
 
         void act();
         int collide(Object& obj);
@@ -27,6 +29,8 @@ class CBullet : public Generic
     protected:
 
     private:
+
+        ParticleEmitter m_particle;
 
         CPlayer* m_owner;
 

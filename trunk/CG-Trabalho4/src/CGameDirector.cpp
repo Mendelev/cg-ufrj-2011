@@ -104,10 +104,10 @@ void CGameDirector::InitializeLevel()
     m_ammoSpawners.push_back(new CAmmoSpawner(0 , 10 , (K_FLOOR_SIZE_Z/2 - 10)));
     m_ammoSpawners.push_back(new CAmmoSpawner(0 , 10 ,-(K_FLOOR_SIZE_Z/2 - 10)));
 
-    m_enemySpawners.push_back(new CEnemySpawner(this , -(K_FLOOR_SIZE_X/2 - 10) , 10 , -(K_FLOOR_SIZE_Z/2 - 10)));
-    m_enemySpawners.push_back(new CEnemySpawner(this , (K_FLOOR_SIZE_X/2 - 10) , 10 , -(K_FLOOR_SIZE_Z/2 - 10)));
-    m_enemySpawners.push_back(new CEnemySpawner(this , -(K_FLOOR_SIZE_X/2 - 10) , 10 , (K_FLOOR_SIZE_Z/2 - 10)));
-    m_enemySpawners.push_back(new CEnemySpawner(this , (K_FLOOR_SIZE_X/2 - 10) , 10 , (K_FLOOR_SIZE_Z/2 - 10)));
+    m_enemySpawners.push_back(new CEnemySpawner(this , -(K_FLOOR_SIZE_X/2 - 10) , 5 , -(K_FLOOR_SIZE_Z/2 - 10)));
+    m_enemySpawners.push_back(new CEnemySpawner(this , (K_FLOOR_SIZE_X/2 - 10) , 5 , -(K_FLOOR_SIZE_Z/2 - 10)));
+    m_enemySpawners.push_back(new CEnemySpawner(this , -(K_FLOOR_SIZE_X/2 - 10) , 5 , (K_FLOOR_SIZE_Z/2 - 10)));
+    m_enemySpawners.push_back(new CEnemySpawner(this , (K_FLOOR_SIZE_X/2 - 10) , 5, (K_FLOOR_SIZE_Z/2 - 10)));
 
     for (int i = 0; i < 4; ++i)
     {
@@ -126,6 +126,7 @@ void CGameDirector::InitializeLevel()
     for (unsigned int i = 0; i < bullets->size(); ++i)
     {
         m_scene.insert(bullets->at(i));
+        m_scene.insert(bullets->at(i)->GetParticle());
     }
 
     m_scene.prepare();
